@@ -1,748 +1,872 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gentellela Alela! | </title>
+        <title>Gentellela Alela! | </title>
 
-    <!-- Bootstrap -->
-    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- NProgress -->
-    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
-    <!-- iCheck -->
-    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+        <!-- Bootstrap -->
+        <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <!-- NProgress -->
+        <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+        <!-- iCheck -->
+        <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+        <!-- Select2 -->
+        <link href="../vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+        <!-- Bootstrap Colorpicker -->
+        <link href="../vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+        <!-- Custom Theme Style -->
+        <link href="../build/css/custom.min.css" rel="stylesheet">
+        <link rel="stylesheet"  href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
-    <!-- Custom Theme Style -->
-    <link href="../build/css/custom.min.css" rel="stylesheet">
-  </head>
+        <style>
+            .gi-3x
+            {
+                /*font-size: 2em!important;*/
+                font-size: 22px!important;
+                /*color: #ED5565;*/
+                color: #286090;
+            }
+            .gi-2x
+            {
+                font-size: 17px;
+                float: right;
+                position: relative;
+                color: #286090;
 
-  <body class="nav-md">
-    <div class="container body">
-      <div class="main_container">
-        <div class="col-md-3 left_col">
-          <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentellela Alela!</span></a>
-            </div>
+            }
+            .select2-container--default .select2-selection--single, .select2-container--default .select2-selection--multiple
+            {
+                min-height: 34px;
+            }
+            .select2-container--default .select2-selection--single .select2-selection__rendered
+            {
+                padding-top: 3px;
+                font-size: 14px;
+            } 
+            .dropdown-menu>li>a
+            {
+                line-height: 2.12;
+                font-size: 14px
+            }
+            .circle-number
+            {
+                padding: 2px 8px;
+            }
+            .table>tbody>tr>td
+            {
+                padding: 3px;
+                vertical-align: middle;
+                border-left: 1px solid #ddd;
+            }
+            /*            .form-control-feedback.fa
+                        {
+                            margin-top: 11px;
+                        }*/
+        </style>
+    </head>
 
-            <div class="clearfix"></div>
+    <body class="nav-md">
+        <div class="container body">
+            <div class="main_container">
+                <div class="col-md-3 left_col">
+                    <div class="left_col scroll-view">
+                        <div class="navbar nav_title" style="border: 0;">
+                            <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentellela Alela!</span></a>
+                        </div>
 
-            <!-- menu profile quick info -->
-            <div class="profile">
-              <div class="profile_pic">
-                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
-              </div>
-              <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>John Doe</h2>
-              </div>
-            </div>
-            <!-- /menu profile quick info -->
+                        <div class="clearfix"></div>
 
-            <br />
+                        <!-- menu profile quick info -->
+                        <div class="profile">
+                            <div class="profile_pic">
+                                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                            </div>
+                            <div class="profile_info">
+                                <span>Welcome,</span>
+                                <h2>John Doe</h2>
+                            </div>
+                        </div>
+                        <!-- /menu profile quick info -->
 
-            <!-- sidebar menu -->
-            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-              <div class="menu_section">
-                <h3>General</h3>
-                <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="index.html">Dashboard</a></li>
-                      <li><a href="index2.html">Dashboard2</a></li>
-                      <li><a href="index3.html">Dashboard3</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="form.html">General Form</a></li>
-                      <li><a href="form_advanced.html">Advanced Components</a></li>
-                      <li><a href="form_validation.html">Form Validation</a></li>
-                      <li><a href="form_wizards.html">Form Wizard</a></li>
-                      <li><a href="form_upload.html">Form Upload</a></li>
-                      <li><a href="form_buttons.html">Form Buttons</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="general_elements.html">General Elements</a></li>
-                      <li><a href="media_gallery.html">Media Gallery</a></li>
-                      <li><a href="typography.html">Typography</a></li>
-                      <li><a href="icons.html">Icons</a></li>
-                      <li><a href="glyphicons.html">Glyphicons</a></li>
-                      <li><a href="widgets.html">Widgets</a></li>
-                      <li><a href="invoice.html">Invoice</a></li>
-                      <li><a href="inbox.html">Inbox</a></li>
-                      <li><a href="calendar.html">Calendar</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="tables.html">Tables</a></li>
-                      <li><a href="tables_dynamic.html">Table Dynamic</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="chartjs.html">Chart JS</a></li>
-                      <li><a href="chartjs2.html">Chart JS2</a></li>
-                      <li><a href="morisjs.html">Moris JS</a></li>
-                      <li><a href="echarts.html">ECharts</a></li>
-                      <li><a href="other_charts.html">Other Charts</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                      <li><a href="fixed_footer.html">Fixed Footer</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-              <div class="menu_section">
-                <h3>Live On</h3>
-                <ul class="nav side-menu">
-                  <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="e_commerce.html">E-commerce</a></li>
-                      <li><a href="projects.html">Projects</a></li>
-                      <li><a href="project_detail.html">Project Detail</a></li>
-                      <li><a href="contacts.html">Contacts</a></li>
-                      <li><a href="profile.html">Profile</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="page_403.html">403 Error</a></li>
-                      <li><a href="page_404.html">404 Error</a></li>
-                      <li><a href="page_500.html">500 Error</a></li>
-                      <li><a href="plain_page.html">Plain Page</a></li>
-                      <li><a href="login.html">Login Page</a></li>
-                      <li><a href="pricing_tables.html">Pricing Tables</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                        <li><a href="#level1_1">Level One</a>
-                        <li><a>Level One<span class="fa fa-chevron-down"></span></a>
-                          <ul class="nav child_menu">
-                            <li class="sub_menu"><a href="level2.html">Level Two</a>
-                            </li>
-                            <li><a href="#level2_1">Level Two</a>
-                            </li>
-                            <li><a href="#level2_2">Level Two</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li><a href="#level1_2">Level One</a>
-                        </li>
-                    </ul>
-                  </li>                  
-                  <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
-                </ul>
-              </div>
+                        <br />
 
-            </div>
-            <!-- /sidebar menu -->
+                        <!-- sidebar menu -->
+                        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                            <div class="menu_section">
+                                <h3>General</h3>
+                                <ul class="nav side-menu">
+                                    <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="index.html">Dashboard</a></li>
+                                            <li><a href="index2.html">Dashboard2</a></li>
+                                            <li><a href="index3.html">Dashboard3</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="form.html">General Form</a></li>
+                                            <li><a href="form_advanced.html">Advanced Components</a></li>
+                                            <li><a href="form_validation.html">Form Validation</a></li>
+                                            <li><a href="form_wizards.html">Form Wizard</a></li>
+                                            <li><a href="form_upload.html">Form Upload</a></li>
+                                            <li><a href="form_buttons.html">Form Buttons</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="general_elements.html">General Elements</a></li>
+                                            <li><a href="media_gallery.html">Media Gallery</a></li>
+                                            <li><a href="typography.html">Typography</a></li>
+                                            <li><a href="icons.html">Icons</a></li>
+                                            <li><a href="glyphicons.html">Glyphicons</a></li>
+                                            <li><a href="widgets.html">Widgets</a></li>
+                                            <li><a href="invoice.html">Invoice</a></li>
+                                            <li><a href="inbox.html">Inbox</a></li>
+                                            <li><a href="calendar.html">Calendar</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="tables.html">Tables</a></li>
+                                            <li><a href="tables_dynamic.html">Table Dynamic</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="chartjs.html">Chart JS</a></li>
+                                            <li><a href="chartjs2.html">Chart JS2</a></li>
+                                            <li><a href="morisjs.html">Moris JS</a></li>
+                                            <li><a href="echarts.html">ECharts</a></li>
+                                            <li><a href="other_charts.html">Other Charts</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
+                                            <li><a href="fixed_footer.html">Fixed Footer</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="menu_section">
+                                <h3>Live On</h3>
+                                <ul class="nav side-menu">
+                                    <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="e_commerce.html">E-commerce</a></li>
+                                            <li><a href="projects.html">Projects</a></li>
+                                            <li><a href="project_detail.html">Project Detail</a></li>
+                                            <li><a href="contacts.html">Contacts</a></li>
+                                            <li><a href="profile.html">Profile</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="page_403.html">403 Error</a></li>
+                                            <li><a href="page_404.html">404 Error</a></li>
+                                            <li><a href="page_500.html">500 Error</a></li>
+                                            <li><a href="plain_page.html">Plain Page</a></li>
+                                            <li><a href="login.html">Login Page</a></li>
+                                            <li><a href="pricing_tables.html">Pricing Tables</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="#level1_1">Level One</a>
+                                            <li><a>Level One<span class="fa fa-chevron-down"></span></a>
+                                                <ul class="nav child_menu">
+                                                    <li class="sub_menu"><a href="level2.html">Level Two</a>
+                                                    </li>
+                                                    <li><a href="#level2_1">Level Two</a>
+                                                    </li>
+                                                    <li><a href="#level2_2">Level Two</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#level1_2">Level One</a>
+                                            </li>
+                                        </ul>
+                                    </li>                  
+                                    <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
+                                </ul>
+                            </div>
 
-            <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Lock">
-                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout">
-                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-              </a>
-            </div>
-            <!-- /menu footer buttons -->
-          </div>
-        </div>
+                        </div>
+                        <!-- /sidebar menu -->
 
-        <!-- top navigation -->
-        <div class="top_nav">
-          <div class="nav_menu">
-            <nav>
-              <div class="nav toggle">
-                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-              </div>
-
-              <ul class="nav navbar-nav navbar-right">
-                <li class="">
-                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt="">John Doe
-                    <span class=" fa fa-angle-down"></span>
-                  </a>
-                  <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="javascript:;"> Profile</a></li>
-                    <li>
-                      <a href="javascript:;">
-                        <span class="badge bg-red pull-right">50%</span>
-                        <span>Settings</span>
-                      </a>
-                    </li>
-                    <li><a href="javascript:;">Help</a></li>
-                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
-                  </ul>
-                </li>
-
-                <li role="presentation" class="dropdown">
-                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-envelope-o"></i>
-                    <span class="badge bg-green">6</span>
-                  </a>
-                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="text-center">
-                        <a>
-                          <strong>See All Alerts</strong>
-                          <i class="fa fa-angle-right"></i>
-                        </a>
-                      </div>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-        <!-- /top navigation -->
-
-        <!-- page content -->
-        <div class="right_col" role="main">
-          <div class="">
-            <div class="page-title">
-              <div class="title_left">
-                <h3>Tables <small>Some examples to get you started</small></h3>
-              </div>
-
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="clearfix"></div>
-
-            <div class="row">
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Basic Tables <small>basic table subtitle</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
-                          <th>Username</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Stripped table <small>Stripped table subtitle</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
-                          <th>Username</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                  </div>
-                </div>
-              </div>
-
-              <div class="clearfix"></div>
-
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Hover rows <small>Try hovering over the rows</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                    <table class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
-                          <th>Username</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Boardered table <small>Bordered table subtitle</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
-                          <th>Username</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                  </div>
-                </div>
-              </div>
-
-              <div class="clearfix"></div>
-
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Table design <small>Custom design</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-
-                  <div class="x_content">
-
-                    <p>Add class <code>bulk_action</code> to table for bulk actions options on row select</p>
-
-                    <div class="table-responsive">
-                      <table class="table table-striped jambo_table bulk_action">
-                        <thead>
-                          <tr class="headings">
-                            <th>
-                              <input type="checkbox" id="check-all" class="flat">
-                            </th>
-                            <th class="column-title">Invoice </th>
-                            <th class="column-title">Invoice Date </th>
-                            <th class="column-title">Order </th>
-                            <th class="column-title">Bill to Name </th>
-                            <th class="column-title">Status </th>
-                            <th class="column-title">Amount </th>
-                            <th class="column-title no-link last"><span class="nobr">Action</span>
-                            </th>
-                            <th class="bulk-actions" colspan="7">
-                              <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
-                            </th>
-                          </tr>
-                        </thead>
-
-                        <tbody>
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">121000040</td>
-                            <td class=" ">May 23, 2014 11:47:56 PM </td>
-                            <td class=" ">121000210 <i class="success fa fa-long-arrow-up"></i></td>
-                            <td class=" ">John Blank L</td>
-                            <td class=" ">Paid</td>
-                            <td class="a-right a-right ">$7.45</td>
-                            <td class=" last"><a href="#">View</a>
-                            </td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">121000039</td>
-                            <td class=" ">May 23, 2014 11:30:12 PM</td>
-                            <td class=" ">121000208 <i class="success fa fa-long-arrow-up"></i>
-                            </td>
-                            <td class=" ">John Blank L</td>
-                            <td class=" ">Paid</td>
-                            <td class="a-right a-right ">$741.20</td>
-                            <td class=" last"><a href="#">View</a>
-                            </td>
-                          </tr>
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">121000038</td>
-                            <td class=" ">May 24, 2014 10:55:33 PM</td>
-                            <td class=" ">121000203 <i class="success fa fa-long-arrow-up"></i>
-                            </td>
-                            <td class=" ">Mike Smith</td>
-                            <td class=" ">Paid</td>
-                            <td class="a-right a-right ">$432.26</td>
-                            <td class=" last"><a href="#">View</a>
-                            </td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">121000037</td>
-                            <td class=" ">May 24, 2014 10:52:44 PM</td>
-                            <td class=" ">121000204</td>
-                            <td class=" ">Mike Smith</td>
-                            <td class=" ">Paid</td>
-                            <td class="a-right a-right ">$333.21</td>
-                            <td class=" last"><a href="#">View</a>
-                            </td>
-                          </tr>
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">121000040</td>
-                            <td class=" ">May 24, 2014 11:47:56 PM </td>
-                            <td class=" ">121000210</td>
-                            <td class=" ">John Blank L</td>
-                            <td class=" ">Paid</td>
-                            <td class="a-right a-right ">$7.45</td>
-                            <td class=" last"><a href="#">View</a>
-                            </td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">121000039</td>
-                            <td class=" ">May 26, 2014 11:30:12 PM</td>
-                            <td class=" ">121000208 <i class="error fa fa-long-arrow-down"></i>
-                            </td>
-                            <td class=" ">John Blank L</td>
-                            <td class=" ">Paid</td>
-                            <td class="a-right a-right ">$741.20</td>
-                            <td class=" last"><a href="#">View</a>
-                            </td>
-                          </tr>
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">121000038</td>
-                            <td class=" ">May 26, 2014 10:55:33 PM</td>
-                            <td class=" ">121000203</td>
-                            <td class=" ">Mike Smith</td>
-                            <td class=" ">Paid</td>
-                            <td class="a-right a-right ">$432.26</td>
-                            <td class=" last"><a href="#">View</a>
-                            </td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">121000037</td>
-                            <td class=" ">May 26, 2014 10:52:44 PM</td>
-                            <td class=" ">121000204</td>
-                            <td class=" ">Mike Smith</td>
-                            <td class=" ">Paid</td>
-                            <td class="a-right a-right ">$333.21</td>
-                            <td class=" last"><a href="#">View</a>
-                            </td>
-                          </tr>
-
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">121000040</td>
-                            <td class=" ">May 27, 2014 11:47:56 PM </td>
-                            <td class=" ">121000210</td>
-                            <td class=" ">John Blank L</td>
-                            <td class=" ">Paid</td>
-                            <td class="a-right a-right ">$7.45</td>
-                            <td class=" last"><a href="#">View</a>
-                            </td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">121000039</td>
-                            <td class=" ">May 28, 2014 11:30:12 PM</td>
-                            <td class=" ">121000208</td>
-                            <td class=" ">John Blank L</td>
-                            <td class=" ">Paid</td>
-                            <td class="a-right a-right ">$741.20</td>
-                            <td class=" last"><a href="#">View</a>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
+                        <!-- /menu footer buttons -->
+                        <div class="sidebar-footer hidden-small">
+                            <a data-toggle="tooltip" data-placement="top" title="Settings">
+                                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                            </a>
+                            <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                            </a>
+                            <a data-toggle="tooltip" data-placement="top" title="Lock">
+                                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                            </a>
+                            <a data-toggle="tooltip" data-placement="top" title="Logout">
+                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                        <!-- /menu footer buttons -->
                     </div>
-                  </div>
                 </div>
-              </div>
+
+                <!-- top navigation -->
+                <div class="top_nav">
+                    <div class="nav_menu">
+                        <nav>
+                            <div class="nav toggle">
+                                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                            </div>
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="">
+                                    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <img src="images/img.jpg" alt="">John Doe
+                                        <span class=" fa fa-angle-down"></span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                        <li><a href="javascript:;"> Profile</a></li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="badge bg-red pull-right">50%</span>
+                                                <span>Settings</span>
+                                            </a>
+                                        </li>
+                                        <li><a href="javascript:;">Help</a></li>
+                                        <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                    </ul>
+                                </li>
+
+                                <li role="presentation" class="dropdown">
+                                    <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa fa-envelope-o"></i>
+                                        <span class="badge bg-green">6</span>
+                                    </a>
+                                    <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                                        <li>
+                                            <a>
+                                                <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                                <span>
+                                                    <span>John Smith</span>
+                                                    <span class="time">3 mins ago</span>
+                                                </span>
+                                                <span class="message">
+                                                    Film festivals used to be do-or-die moments for movie makers. They were where...
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a>
+                                                <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                                <span>
+                                                    <span>John Smith</span>
+                                                    <span class="time">3 mins ago</span>
+                                                </span>
+                                                <span class="message">
+                                                    Film festivals used to be do-or-die moments for movie makers. They were where...
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a>
+                                                <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                                <span>
+                                                    <span>John Smith</span>
+                                                    <span class="time">3 mins ago</span>
+                                                </span>
+                                                <span class="message">
+                                                    Film festivals used to be do-or-die moments for movie makers. They were where...
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a>
+                                                <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                                <span>
+                                                    <span>John Smith</span>
+                                                    <span class="time">3 mins ago</span>
+                                                </span>
+                                                <span class="message">
+                                                    Film festivals used to be do-or-die moments for movie makers. They were where...
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="text-center">
+                                                <a>
+                                                    <strong>See All Alerts</strong>
+                                                    <i class="fa fa-angle-right"></i>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!-- /top navigation -->
+
+                <!-- page content -->
+                <div class="right_col" role="main">
+                    <div class="">
+                        <div class="page-title">
+                            <div class="title_left">
+                                <h3>Home <small><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></small> Case Management</h3>
+                            </div>
+
+                            <div class="title_right">
+                                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search for...">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button">Go!</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <div class="row">
+                            <div class="clearfix"></div>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="x_panel">
+                                    <div class="x_title">
+                                        <h2>Cases List <small></small></h2>
+                                        <ul class="nav navbar-right panel_toolbox">
+                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                                <ul class="dropdown-menu" role="menu">
+                                                    <li><a href="#">Settings 1</a>
+                                                    </li>
+                                                    <li><a href="#">Settings 2</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                            </li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                    <div class="x_content">
+                                        <div style="padding-top: 15px;padding-bottom: 15px;">
+                                            <form class="form-horizontal form-label-left input_mask">
+
+                                                <div class="col-md-2 col-sm-2 col-xs-8 form-group has-feedback">
+                                                    <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Case ID">
+                                                    <span class="fa fa-key form-control-feedback left" aria-hidden="true" style="padding-top: 3px;"></span>
+                                                </div>
+
+                                                <div class="col-md-2 col-md col-sm-2 col-xs-4 form-group has-feedback">
+                                                    <input type="text" class="form-control has-feedback-left" id="inputSuccess3" placeholder="Case Name">
+                                                    <span class="fa fa-credit-card form-control-feedback left" aria-hidden="true" style="padding-top: 3px;"></span>
+                                                </div>
+                                                <div class="col-md-2 col-sm-2 col-xs-4 form-group has-feedback">
+                                                    <select id="productSearch" class="selProduct form-control" tabindex="-1">
+                                                        <option></option>
+                                                        <option value="travel-express" data-icon="fa-plane">Travel Express</option>
+                                                        <option value="group-term-life" data-icon="fa-users">Group Term Life</option>
+                                                        <option value="regular-unit-link" data-icon="fa-tint">Regular Unit Link</option>
+                                                        <option value="motor-private-car-as" data-icon="fa-bicycle">Motor Private Car</option>
+                                                        <option value="term-life-secure" data-icon="fa-heart">Term Life Secure</option>                                                       
+                                                        <option value="personal-accident" data-icon="fa-exclamation-triangle">Personal Accident</option>
+                                                        <option value="guarantee-caskback-saver" data-icon="fa-line-chart">Guarantee Cashback Saver</option>
+                                                        <option value="fire" data-icon="fa-fire">Fire</option>
+                                                        <option value="car" data-icon="fa-automobile">Car</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-2 col-sm-2 col-xs-4 form-group has-feedback">
+                                                    <input type="text" class="form-control has-feedback-left" id="inputSuccess3" placeholder="Created By User">
+                                                    <span class="fa fa-user form-control-feedback left" aria-hidden="true" style="padding-top: 3px;"></span>
+                                                </div>
+                                                <div class="col-md-2 col-sm-2 col-xs-4 form-group has-feedback">
+                                                    <select id="businessStatusSearch" class="form-control" tabindex="-1">
+                                                        <option></option>
+                                                        <option value="DRAFT">Draft</option>
+                                                        <option value="READY FOR SUBMISSION">Ready</option>
+                                                        <option value="SUBMITTING">Submitting</option>
+                                                        <option value="SUBMITTED">Submitted</option>
+                                                        <option value="FAIL">Failure</option>
+                                                    </select>
+                                                </div>
+                                                <!--                                            <div class="ln_solid"></div>-->
+                                                <div class="col-md-2 col-sm-2 col-xs-4 form-group has-feedback">
+                                                    <button type="submit" class="btn btn-success"><i class="fa fa-search"></i> Search</button>
+                                                </div>
+
+                                            </form>
+                                        </div>
+
+                                        <div class="table-responsive">
+                                            <table class="table table-striped jambo_table bulk_action" style="margin: 0 auto;">
+                                                <thead>
+                                                    <tr class="headings">
+                                                        <th class="text-center" style="width: 60px">
+                                                            <input type="checkbox" id="check-all" class="flat">
+                                                        </th>
+                                                        <th class="column-title text-center" style="width: 60px">#</th>
+                                                        <th class="column-title text-center" style="width: 350px">Case ID</th>
+                                                        <th class="column-title text-center" style="width: 150px">Case Name</th>
+                                                        <th class="column-title text-center" style="width: 100px">Product</th>
+                                                        <th class="column-title text-center" style="width: 250px">Created User</th>
+                                                        <th class="column-title text-center" style="width: 150px">Profile ID</th>
+                                                        <th class="column-title text-center" style="width: 150px">Created Date</th>
+                                                        <th class="column-title text-center" style="width: 150px">Modified Date</th>
+                                                        <th class="column-title no-link last text-center" style=""><span class="nobr">Status</span>
+                                                        </th>
+                                                        <th class="bulk-actions" colspan="9">
+                                                            <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr class="even pointer">
+                                                        <td class="text-center"  style="width: 60px">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center" style="width: 60px"><button type="button" class="btn btn-round btn-primary btn-xs circle-number" data-toggle="modal" data-target=".bs-example-modal-lg">1</button></td>
+                                                        <td class="text-center" style="width: 350px"><button type="button" class="btn btn-link">2173a724-cc47-44de-8058-eca3b761d9aa</button></td>
+                                                        <td class="text-center" style="width: 150px"><button type="button" class="btn btn-link">BC754357</button></td>
+                                                        <td class="text-center" style="width: 100px"><i class="fa fa-plane gi-3x" data-toggle="tooltip" data-placement="right" title="Travel Express"></i></td>
+                                                        <td class="text-center" style="width: 250px">John Blank L</td>
+                                                        <td class="text-center" style="width: 150px">PF00002</td>
+                                                        <td class="text-center" style="width: 150px">2016-05-06</td>
+                                                        <td class="a-right a-right text-center" style="width: 150px">2016-06-08</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-spinner"></i> Submitting</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="odd pointer">
+                                                        <td class="text-center"  style="width: 60px">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-round btn-primary btn-xs circle-number" data-toggle="modal" data-target=".bs-example-modal-lg">2</button></td>
+                                                        <td class="text-center" style="width: 350px"><button type="button" class="btn btn-link">2173a724-cc47-44de-8058-eca3b761d9aa</button></td>
+                                                        <td class="text-center" style="width: 150px"><button type="button" class="btn btn-link">BC754357</button></td>
+                                                        <td class="text-center"><i class="fa fa-automobile gi-3x" data-toggle="tooltip" data-placement="right" title="Car"></i></td>
+                                                        <td class="text-center">John Blank L</td>
+                                                        <td class="text-center">PF00002</td>
+                                                        <td class="text-center">2016-05-06</td>
+                                                        <td class="a-right a-right text-center">2016-06-08</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-danger btn-xs"><i class="fa fa-times-circle"></i> Failure</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="even pointer">
+                                                        <td class="text-center"  style="width: 60px">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-round btn-primary btn-xs circle-number" data-toggle="modal" data-target=".bs-example-modal-lg">3</button></td>
+                                                        <td class="text-center" style="width: 350px"><button type="button" class="btn btn-link">2173a724-cc47-44de-8058-eca3b761d9aa</button></td>
+                                                        <td class="text-center" style="width: 150px"><button type="button" class="btn btn-link">BC754357</button></td>
+                                                        <td class="text-center"><i class="fa fa-fire gi-3x" data-toggle="tooltip" data-placement="right" title="Fire"></i></td>
+                                                        <td class="text-center">John Blank L</td>
+                                                        <td class="text-center">PF00002</td>
+                                                        <td class="text-center">2016-05-06</td>
+                                                        <td class="a-right a-right text-center">2016-06-08</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-warning btn-xs"><i class="fa fa-thumbs-o-up"></i> Ready </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="odd pointer">
+                                                        <td class="text-center"  style="width: 60px">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-round btn-primary btn-xs circle-number" data-toggle="modal" data-target=".bs-example-modal-lg">4</button></td>
+                                                        <td class="text-center" style="width: 350px"><button type="button" class="btn btn-link">2173a724-cc47-44de-8058-eca3b761d9aa</button></td>
+                                                        <td class="text-center" style="width: 150px"><button type="button" class="btn btn-link">BC754357</button></td>
+                                                        <td class="text-center"><i class="fa fa-exclamation-triangle gi-3x" data-toggle="tooltip" data-placement="right" title="Personal Accident"></i></td>
+                                                        <td class="text-center">John Blank L</td>
+                                                        <td class="text-center">PF00002</td>
+                                                        <td class="text-center">2016-05-06</td>
+                                                        <td class="a-right a-right text-center">2016-06-08</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-danger btn-xs"><i class="fa fa-times-circle"></i> Failure </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="even pointer">
+                                                        <td class="text-center"  style="width: 60px">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-round btn-primary btn-xs circle-number" data-toggle="modal" data-target=".bs-example-modal-lg">5</button></td>
+                                                        <td class="text-center" style="width: 350px"><button type="button" class="btn btn-link">2173a724-cc47-44de-8058-eca3b761d9aa</button></td>
+                                                        <td class="text-center" style="width: 150px"><button type="button" class="btn btn-link">BC754357</button></td>
+                                                        <td class="text-center"><i class="fa fa-line-chart gi-3x" data-toggle="tooltip" data-placement="right" title="Guarantee Cashback Saver"></i></td>
+                                                        <td class="text-center">John Blank L</td>
+                                                        <td class="text-center">PF00002</td>
+                                                        <td class="text-center">2016-05-06</td>
+                                                        <td class="a-right a-right text-center">2016-06-08</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-danger btn-xs"><i class="fa fa-times-circle"></i> Failure</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="odd pointer">
+                                                        <td class="text-center"  style="width: 60px">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-round btn-primary btn-xs circle-number" data-toggle="modal" data-target=".bs-example-modal-lg">6</button></td>
+                                                        <td class="text-center" style="width: 350px"><button type="button" class="btn btn-link">2173a724-cc47-44de-8058-eca3b761d9aa</button></td>
+                                                        <td class="text-center" style="width: 150px"><button type="button" class="btn btn-link">BC754357</button></td>
+                                                        <td class="text-center"><i class="fa fa-heart gi-3x" data-toggle="tooltip" data-placement="right" title="Term Life Secure"></i></td>
+                                                        <td class="text-center">John Blank L</td>
+                                                        <td class="text-center">PF00002</td>
+                                                        <td class="text-center">2016-05-06</td>
+                                                        <td class="a-right a-right text-center">2016-06-08</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-success btn-xs"><i class="fa fa-check-square-o"></i> Submitted</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="even pointer">
+                                                        <td class="text-center"  style="width: 60px">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-round btn-primary btn-xs circle-number" data-toggle="modal" data-target=".bs-example-modal-lg">7</button></td>
+                                                        <td class="text-center" style="width: 350px"><button type="button" class="btn btn-link">2173a724-cc47-44de-8058-eca3b761d9aa</button></td>
+                                                        <td class="text-center" style="width: 150px"><button type="button" class="btn btn-link">BC754357</button></td>
+                                                        <td class="text-center"><i class="fa fa-heart gi-3x" data-toggle="tooltip" data-placement="right" title="Term Life Secure"></i></td>
+                                                        <td class="text-center">John Blank L</td>
+                                                        <td class="text-center">PF00002</td>
+                                                        <td class="text-center">2016-05-06</td>
+                                                        <td class="a-right a-right text-center">2016-06-08</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-dark btn-xs"><i class="fa fa-sign-in"></i> Queuing</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="odd pointer">
+                                                        <td class="text-center"  style="width: 60px">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-round btn-primary btn-xs circle-number" data-toggle="modal" data-target=".bs-example-modal-lg">8</button></td>
+                                                        <td class="text-center" style="width: 350px"><button type="button" class="btn btn-link">2173a724-cc47-44de-8058-eca3b761d9aa</button></td>
+                                                        <td class="text-center" style="width: 150px"><button type="button" class="btn btn-link">BC754357</button></td>
+                                                        <td class="text-center"><i class="fa fa-bicycle gi-3x" data-toggle="tooltip" data-placement="right" title="Motor Private Car"></i></td>
+                                                        <td class="text-center">John Blank L</td>
+                                                        <td class="text-center">PF00002</td>
+                                                        <td class="text-center">2016-05-06</td>
+                                                        <td class="a-right a-right text-center">2016-06-08</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-success btn-xs"><i class="fa fa-check-square-o"></i> Submitted</button>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr class="even pointer">
+                                                        <td class="text-center"  style="width: 60px">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-round btn-primary btn-xs circle-number" data-toggle="modal" data-target=".bs-example-modal-lg">9</button></td>
+                                                        <td class="text-center" style="width: 350px"><button type="button" class="btn btn-link">2173a724-cc47-44de-8058-eca3b761d9aa</button></td>
+                                                        <td class="text-center" style="width: 150px"><button type="button" class="btn btn-link">BC754357</button></td>
+                                                        <td class="text-center"><i class="fa fa-tint gi-3x" data-toggle="tooltip" data-placement="right" title="Regular Unit Link"></i></td>
+                                                        <td class="text-center">John Blank L</td>
+                                                        <td class="text-center">PF00002</td>
+                                                        <td class="text-center">2016-05-06</td>
+                                                        <td class="a-right a-right text-center">2016-06-08</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-spinner"></i> Submitting</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="odd pointer">
+                                                        <td class="text-center"  style="width: 60px">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-round btn-primary btn-xs circle-number" data-toggle="modal" data-target=".bs-example-modal-lg">10</button></td>
+                                                        <td class="text-center" style="width: 350px"><button type="button" class="btn btn-link">2173a724-cc47-44de-8058-eca3b761d9aa</button></td>
+                                                        <td class="text-center" style="width: 150px"><button type="button" class="btn btn-link">BC754357</button></td>
+                                                        <td class="text-center"><i class="fa fa-users gi-3x" data-toggle="tooltip" data-placement="right" title="Group Term Life"></i></td>
+                                                        <td class="text-center">John Blank L</td>
+                                                        <td class="text-center">PF00002</td>
+                                                        <td class="text-center">2016-05-06</td>
+                                                        <td class="a-right a-right text-center">2016-06-08</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-dark btn-xs"><i class="fa fa-sign-in"></i> Queuing</button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div style="padding-top: 28px;">
+                                            <button type="button" class="btn btn-success"><i class="fa fa-download" ></i> Export</button>
+                                            <button type="button" class="btn btn-success"><i class="fa fa-print" ></i> Print</button>
+                                            <button type="button" class="btn btn-success"><i class="fa fa-trash-o" ></i> Delete</button>
+                                            <div class="btn-group" style="vertical-align: top;">
+                                                <button type="button" class="btn btn-success"><i class="fa fa-edit" ></i> Update</button>
+                                                <div class="btn-group">
+                                                    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button" aria-expanded="true">Select Status <span class="caret"></span> </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="#" rollapp-href="">Submitting</a>
+                                                        </li>
+                                                        <li><a href="#" rollapp-href="">Submitted</a>
+                                                        </li>
+                                                        <li><a href="#" rollapp-href="">Queuing</a>
+                                                        </li>
+                                                        <li><a href="#" rollapp-href="">Failure</a>
+                                                        </li>
+                                                        <li><a href="#" rollapp-href="">Ready</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <!--model-->
+                                            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                                                <div class="modal-dialog modal-lg">
+                                                    <div class="modal-content">
+
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                                            </button>
+                                                            <h4 class="modal-title" id="myModalLabel">Case Management Detail</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form class="form-horizontal form-label-left">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Case ID</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" disabled="disabled" placeholder="Disabled Input" value="2173a724-cc47-44de-8058-eca3b761d9aa">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Case Name</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="BC7456545">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group"> 
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Transaction Type</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <select class="select2_single form-control" tabindex="-1">
+                                                                            <option value="New Business">New Business</option>
+                                                                            <option value="Renewal">Renewal</option>
+                                                                            <option value="Endorsement">Endorsement</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Product</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <select class="select2_single form-control" tabindex="-1">
+                                                                            <option value="travel-express">Travel Express</option>
+                                                                            <option value="fire">Fire</option>
+                                                                            <option value="term-life-secure">Term Life Secure</option>
+                                                                            <option value="term-life-secure">Group Term Life</option>
+                                                                            <option value="motor-private-car-as">Motor Private Car</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Created User<span class="required"></span>
+                                                                    </label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" value="agent111@ipos.com" placeholder="Created User" aria-describedby="inputSuccess2Status4">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Profile ID<span class="required"></span>
+                                                                    </label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" value="ADMIN" placeholder="ProfileId" aria-describedby="inputSuccess2Status4">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Illustration</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Application</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Prospect</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Underwriting</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Client Payment</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Agent Payment</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Policy</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <!--                                                                <div class="control-group">
+                                                                                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Resource files</label>
+                                                                                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                                                                                        <input id="tags_1" type="text" class="tags form-control" value="2173a724-cc47-44de-8058-eca3b761d9aa, 2173a724-cc47-44de-8058-eca3b761d9aa, 2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                                                                                        <div id="suggestions-container" style="position: relative; float: left; width: 250px; margin: 10px;"></div>
+                                                                                                                                    </div>
+                                                                                                                                </div>-->
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Created Date<span class="required"></span>
+                                                                    </label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control datePicker" value="09/05/2016" placeholder="Created Date" aria-describedby="inputSuccess2Status4">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Modified Date<span class="required"></span>
+                                                                    </label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control datePicker" value="03/09/2016" placeholder="Modified Date" aria-describedby="inputSuccess2Status4">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Business Status</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <select class="select2_single form-control" tabindex="-1">
+                                                                            <option value="DRAFT">Draft</option>
+                                                                            <option value="READY FOR SUBMISSION">Ready</option>
+                                                                            <option value="SUBMITTING">Submitting</option>
+                                                                            <option value="SUBMITTED">Submitted</option>
+                                                                            <option value="FAIL">Failure</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Document Status</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <select class="select2_single form-control" tabindex="-1">
+                                                                            <option value="VALID">Valid</option>
+                                                                            <option value="INVALID">Invalid</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-default" data-dismiss="">Copy</button>
+                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /page content -->
+
+                <!-- footer content -->
+                <footer>
+                    <div class="pull-right">
+                        Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+                    </div>
+                    <div class="clearfix"></div>
+                </footer>
+                <!-- /footer content -->
             </div>
-          </div>
         </div>
-        <!-- /page content -->
 
-        <!-- footer content -->
-        <footer>
-          <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
-          </div>
-          <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
-      </div>
-    </div>
+        <!-- jQuery -->
+        <script src="../vendors/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- FastClick -->
+        <script src="../vendors/fastclick/lib/fastclick.js"></script>
+        <!-- NProgress -->
+        <script src="../vendors/nprogress/nprogress.js"></script>
+        <!-- iCheck -->
+        <script src="../vendors/iCheck/icheck.min.js"></script>
+        <!-- select2 -->
+        <script src="../vendors/select2/dist/js/select2.full.min.js"></script>
+        <!-- bootstrap-wysiwyg -->
+        <script src="../vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+        <script src="../vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+        <script src="../vendors/google-code-prettify/src/prettify.js"></script>
+        <!-- bootstrap-daterangepicker -->
+        <script src="js/moment/moment.min.js"></script>
+        <script src="js/datepicker/daterangepicker.js"></script>
+        <!-- Ion.RangeSlider -->
+        <script src="../vendors/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
+        <!-- Bootstrap Colorpicker -->
+        <script src="../vendors/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+        <!-- Custom Theme Scripts -->
+        <script src="../build/js/custom.min.js"></script>
+        <!-- jQuery Tags Input -->
+        <script src="../vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+        <!-- Switchery -->
+        <script src="../vendors/switchery/dist/switchery.min.js"></script>
 
-    <!-- jQuery -->
-    <script src="../vendors/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- FastClick -->
-    <script src="../vendors/fastclick/lib/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="../vendors/nprogress/nprogress.js"></script>
-    <!-- iCheck -->
-    <script src="../vendors/iCheck/icheck.min.js"></script>
+        <script>
+            function formatFA(icon) {
 
-    <!-- Custom Theme Scripts -->
-    <script src="../build/js/custom.min.js"></script>
-  </body>
+                if (!icon.id) {
+                    return icon.text;
+                }
+                var originalOption = icon.element;
+                var $icon = $('<div><div align="center" style="width:20px;vertical-align: middle!important;" class="gi-2x"><i class="fa ' + $(originalOption).data('icon') + ' "></i></div> ' + icon.text + '<div>')
+
+//                        .text(" " + icon.text);
+
+                return $icon;
+
+            }
+            ;
+            $(document).ready(function () {
+                $(".select2_single").select2({
+                    placeholder: "Select Business Status",
+                    width: "150px"
+                });
+
+                $("#businessStatusSearch").select2({
+                    placeholder: "Select Business Status",
+                    allowClear: true
+                });
+
+                $('#productSearch').select2({
+                    placeholder: "Select Product",
+                    allowClear: true,
+                    templateResult: formatFA
+                });
+
+                $('.datePicker').daterangepicker({
+                    singleDatePicker: true,
+                    calender_style: "picker_4"
+                }, function (start, end, label) {
+                    console.log(start.toISOString(), end.toISOString(), label);
+                });
+
+                $('#tags_1').tagsInput({
+                    width: 'auto',
+                    defaultText: 'add file'
+                });
+            });
+        </script>
+    </body>
 </html>
