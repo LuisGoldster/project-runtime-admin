@@ -367,16 +367,16 @@
                                             <form class="form-horizontal form-label-left input_mask">
 
                                                 <div class="col-md-2 col-sm-2 col-xs-8 form-group has-feedback">
-                                                    <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Case ID">
+                                                    <input id="txtCaseIdSearch" type="text" class="form-control has-feedback-left" placeholder="Case ID">
                                                     <span class="fa fa-key form-control-feedback left" aria-hidden="true" style="padding-top: 3px;"></span>
                                                 </div>
 
                                                 <div class="col-md-2 col-md col-sm-2 col-xs-4 form-group has-feedback">
-                                                    <input type="text" class="form-control has-feedback-left" id="inputSuccess3" placeholder="Case Name">
+                                                    <input id="txtCaseNameSearch" type="text" class="form-control has-feedback-left" placeholder="Case Name">
                                                     <span class="fa fa-credit-card form-control-feedback left" aria-hidden="true" style="padding-top: 3px;"></span>
                                                 </div>
                                                 <div class="col-md-2 col-sm-2 col-xs-4 form-group has-feedback">
-                                                    <select id="productSearch" class="selProduct form-control" tabindex="-1">
+                                                    <select id="selProductSearch" class="selProduct form-control" tabindex="-1">
                                                         <option></option>
                                                         <option value="travel-express" data-icon="fa-plane">Travel Express</option>
                                                         <option value="group-term-life" data-icon="fa-users">Group Term Life</option>
@@ -390,11 +390,11 @@
                                                     </select>
                                                 </div>
                                                 <div class="col-md-2 col-sm-2 col-xs-4 form-group has-feedback">
-                                                    <input type="text" class="form-control has-feedback-left" id="inputSuccess3" placeholder="Created By User">
+                                                    <input type="text" class="form-control has-feedback-left" id="txtCreatedByUserSearch" placeholder="Created By User">
                                                     <span class="fa fa-user form-control-feedback left" aria-hidden="true" style="padding-top: 3px;"></span>
                                                 </div>
                                                 <div class="col-md-2 col-sm-2 col-xs-4 form-group has-feedback">
-                                                    <select id="businessStatusSearch" class="form-control" tabindex="-1">
+                                                    <select id="selStatusSearch" class="form-control" tabindex="-1">
                                                         <option></option>
                                                         <option value="DRAFT">Draft</option>
                                                         <option value="READY FOR SUBMISSION">Ready</option>
@@ -405,7 +405,7 @@
                                                 </div>
                                                 <!--                                            <div class="ln_solid"></div>-->
                                                 <div class="col-md-2 col-sm-2 col-xs-4 form-group has-feedback">
-                                                    <button type="submit" class="btn btn-success"><i class="fa fa-search"></i> Search</button>
+                                                    <button id="btnSearch" type="submit" class="btn btn-success"><i class="fa fa-search"></i> Search</button>
                                                 </div>
 
                                             </form>
@@ -822,51 +822,7 @@
         <script src="../vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
         <!-- Switchery -->
         <script src="../vendors/switchery/dist/switchery.min.js"></script>
+        <script src="js/case-management.js" type="text/javascript"></script>
 
-        <script>
-            function formatFA(icon) {
-
-                if (!icon.id) {
-                    return icon.text;
-                }
-                var originalOption = icon.element;
-                var $icon = $('<div><div align="center" style="width:20px;vertical-align: middle!important;" class="gi-2x"><i class="fa ' + $(originalOption).data('icon') + ' "></i></div> ' + icon.text + '<div>')
-
-//                        .text(" " + icon.text);
-
-                return $icon;
-
-            }
-            ;
-            $(document).ready(function () {
-                $(".select2_single").select2({
-                    placeholder: "Select Business Status",
-                    width: "150px"
-                });
-
-                $("#businessStatusSearch").select2({
-                    placeholder: "Select Business Status",
-                    allowClear: true
-                });
-
-                $('#productSearch').select2({
-                    placeholder: "Select Product",
-                    allowClear: true,
-                    templateResult: formatFA
-                });
-
-                $('.datePicker').daterangepicker({
-                    singleDatePicker: true,
-                    calender_style: "picker_4"
-                }, function (start, end, label) {
-                    console.log(start.toISOString(), end.toISOString(), label);
-                });
-
-                $('#tags_1').tagsInput({
-                    width: 'auto',
-                    defaultText: 'add file'
-                });
-            });
-        </script>
     </body>
 </html>
