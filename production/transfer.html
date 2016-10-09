@@ -1,0 +1,1898 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>VNG Payment Tool</title>
+
+        <!-- Bootstrap -->
+        <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <!-- NProgress -->
+        <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+        <!-- bootstrap-progressbar -->
+        <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+        <!-- iCheck -->
+        <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+        <!-- Select2 -->
+        <link href="../vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+        <!-- Bootstrap Colorpicker -->
+        <link href="../vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+        <!-- Dropzone.js -->
+        <link href="../vendors/dropzone/dist/min/dropzone.min.css" rel="stylesheet">
+
+        <!-- Datatables -->
+        <link href="../vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+        <link href="../vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+        <link href="../vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+        <link href="../vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+        <link href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom Theme Style -->
+        <link href="../build/css/custom.min.css" rel="stylesheet">
+        <link rel="stylesheet"  href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+        <style>
+            .dataTable > thead > tr > th[class*="nosort"]::after{display: none}
+            .gi-3x
+            {
+                /*font-size: 2em!important;*/
+                font-size: 22px!important;
+                /*color: #ED5565;*/
+                color: #286090;
+            }
+            .gi-2x
+            {
+                font-size: 17px;
+                float: right;
+                position: relative;
+                color: #286090;
+
+            }
+            .select2-container--default .select2-selection--single, .select2-container--default .select2-selection--multiple
+            {
+                min-height: 34px;
+            }
+            .select2-container--default .select2-selection--single .select2-selection__rendered
+            {
+                padding-top: 3px;
+                font-size: 14px;
+            } 
+            .dropdown-menu>li>a
+            {
+                line-height: 2.12;
+                font-size: 14px
+            }
+            .circle-number
+            {
+                padding: 2px 8px;
+            }
+            .table>tbody>tr>td
+            {
+                padding: 3px;
+                vertical-align: middle;
+                border-left: 1px solid #ddd;
+            }
+            .uploadTable>tbody>tr>td
+            {
+                border-left: 0px solid #ddd;
+            }
+            .progress{
+                height: 25px;
+                margin-bottom: 8px;
+            }
+            .progress-bar{
+                line-height: 26px!important;
+            }
+            .btn-bigger-xs{
+                line-height: 0.8!important;
+                padding: 4px 6px 7px;
+                font-size: 12px;
+            }
+/*            table.jambo_table thead {
+                background: #169F85;
+            }*/
+            /*            .progress
+                        {
+                            padding-top: 15px;
+                        }*/
+            /*            .form-control-feedback.fa
+                        {
+                            margin-top: 11px;
+                        }*/
+        </style>
+    </head>
+
+    <body class="nav-md">
+        <div class="container body">
+            <div class="main_container">
+                <div class="col-md-3 left_col">
+                    <div class="left_col scroll-view">
+                        <div class="navbar nav_title" style="border: 0;">
+                            <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>VNG Transfer </span></a>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <!-- menu profile quick info -->
+                        <div class="profile">
+                            <div class="profile_pic">
+                                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                            </div>
+                            <div class="profile_info">
+                                <span>Chào,</span>
+                                <h2>Bùi Tuấn Kiệt</h2>
+                            </div>
+
+                        </div>
+                        <!-- /menu profile quick info -->
+
+                        <br />
+
+                        <!-- sidebar menu -->
+                        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                            <div class="menu_section">
+                                <h3>Danh mục</h3>
+                                <ul class="nav side-menu">
+                                    <li><a><i class="fa fa-home"></i> Trang chủ <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="index.html">Dashboard</a></li>
+                                            <li><a href="index2.html">Dashboard2</a></li>
+                                            <li><a href="index3.html">Dashboard3</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="form.html">General Form</a></li>
+                                            <li><a href="form_advanced.html">Advanced Components</a></li>
+                                            <li><a href="form_validation.html">Form Validation</a></li>
+                                            <li><a href="form_wizards.html">Form Wizard</a></li>
+                                            <li><a href="form_upload.html">Form Upload</a></li>
+                                            <li><a href="form_buttons.html">Form Buttons</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="general_elements.html">General Elements</a></li>
+                                            <li><a href="media_gallery.html">Media Gallery</a></li>
+                                            <li><a href="typography.html">Typography</a></li>
+                                            <li><a href="icons.html">Icons</a></li>
+                                            <li><a href="glyphicons.html">Glyphicons</a></li>
+                                            <li><a href="widgets.html">Widgets</a></li>
+                                            <li><a href="invoice.html">Invoice</a></li>
+                                            <li><a href="inbox.html">Inbox</a></li>
+                                            <li><a href="calendar.html">Calendar</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="tables.html">Tables</a></li>
+                                            <li><a href="tables_dynamic.html">Table Dynamic</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="chartjs.html">Chart JS</a></li>
+                                            <li><a href="chartjs2.html">Chart JS2</a></li>
+                                            <li><a href="morisjs.html">Moris JS</a></li>
+                                            <li><a href="echarts.html">ECharts</a></li>
+                                            <li><a href="other_charts.html">Other Charts</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
+                                            <li><a href="fixed_footer.html">Fixed Footer</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="menu_section">
+                                <h3>Live On</h3>
+                                <ul class="nav side-menu">
+                                    <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="e_commerce.html">E-commerce</a></li>
+                                            <li><a href="projects.html">Projects</a></li>
+                                            <li><a href="project_detail.html">Project Detail</a></li>
+                                            <li><a href="contacts.html">Contacts</a></li>
+                                            <li><a href="profile.html">Profile</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="page_403.html">403 Error</a></li>
+                                            <li><a href="page_404.html">404 Error</a></li>
+                                            <li><a href="page_500.html">500 Error</a></li>
+                                            <li><a href="plain_page.html">Plain Page</a></li>
+                                            <li><a href="login.html">Login Page</a></li>
+                                            <li><a href="pricing_tables.html">Pricing Tables</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="#level1_1">Level One</a>
+                                            <li><a>Level One<span class="fa fa-chevron-down"></span></a>
+                                                <ul class="nav child_menu">
+                                                    <li class="sub_menu"><a href="level2.html">Level Two</a>
+                                                    </li>
+                                                    <li><a href="#level2_1">Level Two</a>
+                                                    </li>
+                                                    <li><a href="#level2_2">Level Two</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#level1_2">Level One</a>
+                                            </li>
+                                        </ul>
+                                    </li>                  
+                                    <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <!-- /sidebar menu -->
+
+                        <!-- /menu footer buttons -->
+                        <div class="sidebar-footer hidden-small">
+                            <a data-toggle="tooltip" data-placement="top" title="Settings">
+                                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                            </a>
+                            <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                            </a>
+                            <a data-toggle="tooltip" data-placement="top" title="Lock">
+                                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                            </a>
+                            <a data-toggle="tooltip" data-placement="top" title="Logout">
+                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                        <!-- /menu footer buttons -->
+                    </div>
+                </div>
+
+                <!-- top navigation -->
+                <div class="top_nav">
+                    <div class="nav_menu">
+                        <nav>
+                            <div class="nav toggle">
+                                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                            </div>
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="">
+                                    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <img src="images/img.jpg" alt="">John Doe
+                                        <span class=" fa fa-angle-down"></span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                        <li><a href="javascript:;"> Profile</a></li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="badge bg-red pull-right">50%</span>
+                                                <span>Settings</span>
+                                            </a>
+                                        </li>
+                                        <li><a href="javascript:;">Help</a></li>
+                                        <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                    </ul>
+                                </li>
+
+                                <li role="presentation" class="dropdown">
+                                    <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa fa-envelope-o"></i>
+                                        <span class="badge bg-green">6</span>
+                                    </a>
+                                    <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                                        <li>
+                                            <a>
+                                                <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                                <span>
+                                                    <span>John Smith</span>
+                                                    <span class="time">3 mins ago</span>
+                                                </span>
+                                                <span class="message">
+                                                    Film festivals used to be do-or-die moments for movie makers. They were where...
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a>
+                                                <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                                <span>
+                                                    <span>John Smith</span>
+                                                    <span class="time">3 mins ago</span>
+                                                </span>
+                                                <span class="message">
+                                                    Film festivals used to be do-or-die moments for movie makers. They were where...
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a>
+                                                <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                                <span>
+                                                    <span>John Smith</span>
+                                                    <span class="time">3 mins ago</span>
+                                                </span>
+                                                <span class="message">
+                                                    Film festivals used to be do-or-die moments for movie makers. They were where...
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a>
+                                                <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                                <span>
+                                                    <span>John Smith</span>
+                                                    <span class="time">3 mins ago</span>
+                                                </span>
+                                                <span class="message">
+                                                    Film festivals used to be do-or-die moments for movie makers. They were where...
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="text-center">
+                                                <a>
+                                                    <strong>See All Alerts</strong>
+                                                    <i class="fa fa-angle-right"></i>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!-- /top navigation -->
+
+                <!-- page content -->
+                <div class="right_col" role="main">
+                    <div class="">
+                        <div class="page-title">
+                            <div class="title_left">
+                                <h3>Trang chủ <small><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></small> Chuyển tiền nhóm</h3>
+                            </div>
+
+                            <div class="title_right">
+                                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search for...">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button">Go!</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="x_panel">
+                                    <div class="x_title">
+                                        <h2>Tải danh sách</h2>
+                                        <ul class="nav navbar-right panel_toolbox">
+                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                                <ul class="dropdown-menu" role="menu">
+                                                    <li><a href="#">Settings 1</a>
+                                                    </li>
+                                                    <li><a href="#">Settings 2</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                            </li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="x_content">
+                                        <p>Có thể kéo thả nhiều tập tin vào vùng bên dưới hoặc nhấp vào để chọn tập tin danh sách người nhận</p>
+                                        <!--<form action="form_upload.html" class="dropzone">-->
+                                        <span class="btn btn-success fileinput-button">
+                                            <i class="glyphicon glyphicon-plus"></i>
+                                            <span>Thêm tập tin</span>
+                                            <!--<input type="file" name="files[]" multiple="">-->
+                                        </span>
+                                        <span class="btn btn-primary fileinput-button">
+                                            <i class="glyphicon glyphicon-upload"></i>
+                                            <span>Tải lên</span>
+                                            <!--<input type="file" name="files[]" multiple="">-->
+                                        </span>
+                                        <span class="btn btn-warning fileinput-button">
+                                            <i class="glyphicon glyphicon-ban-circle"></i>
+                                            <span>Loại bỏ </span>
+                                            <!--<input type="file" name="files[]" multiple="">-->
+                                        </span>
+                                        <span class="btn btn-danger fileinput-button">
+                                            <i class="glyphicon glyphicon-trash"></i>
+                                            <span>Xóa tập tin</span>
+                                            <!--<input type="file" name="files[]" multiple="">-->
+                                        </span>
+                                        <!--</form>-->
+
+                                        <br />
+
+                                        <div class="table-responsive" style="padding-bottom:12px; padding-top: 20px;">
+                                            <table style="width: 1000px" role="presentation" class="table uploadTable table-striped">
+                                                <tbody class="files">
+                                                    <tr class="template-upload fade in">
+                                                        <td><span class="preview"><img src="images/Excel.png" alt="..." class="profile_img" style="width: 60px; height: 60px"></span></td>
+                                                        <td  style="width: 300px"><p class="name">payment-team.xsl</p><strong class="error text-danger"></strong></td>
+                                                        <td style="width: 120px"><p class="size">780.11 KB</p></td>
+                                                        <td style="width: 250px; padding-right: 25px;">
+                                                            <div  class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                                                <div class="progress-bar progress-bar-success" style="width:60%;">60%</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-primary btn-bigger-xs"><i class="glyphicon glyphicon-upload"></i> Tải lên</button>
+                                                            <button type="button" class="btn btn-warning btn-bigger-xs"><i class="glyphicon glyphicon-ban-circle"></i> Loại bỏ</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="template-upload fade in">
+                                                        <td><span class="preview"><img src="images/CSV.png" alt="..." class="profile_img" style="width: 60px; height: 60px"></span></td>
+                                                        <td ><p class="name">zalo-team.csv</p><strong class="error text-danger"></strong></td>
+                                                        <td style="width: 120px"><p class="size">142.83 KB</p></td>
+                                                        <td style="width: 250px; padding-right: 25px"><div  class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:90%;">90%</div></div></td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-primary btn-bigger-xs"><i class="glyphicon glyphicon-upload"></i> Tải lên</button>
+                                                            <button type="button" class="btn btn-warning btn-bigger-xs"><i class="glyphicon glyphicon-ban-circle"></i> Loại bỏ</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="template-upload fade in">
+                                                        <td><span class="preview"><img src="images/CSV.png" alt="..." class="profile_img" style="width: 60px; height: 60px"></span></td>
+                                                        <td ><p class="name">123pay-team.csv</p><strong class="error text-danger"></strong></td>
+                                                        <td style="width: 120px"><p class="size">255.03 KB</p></td>
+                                                        <td style="width: 250px; padding-right: 25px"><div  class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:50%;">50%</div></div></td>
+                                                        <td style="width: 200px">
+                                                            <button type="button" class="btn btn-primary btn-bigger-xs"><i class="glyphicon glyphicon-upload"></i> Tải lên</button>
+                                                            <button type="button" class="btn btn-warning btn-bigger-xs"><i class="glyphicon glyphicon-ban-circle"></i> Loại bỏ</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="template-upload fade in">
+                                                        <td><span class="preview"><img src="images/CSV.png" alt="..." class="profile_img" style="width: 60px; height: 60px"></span></td>
+                                                        <td ><p class="name">webtech-team.csv</p><strong class="error text-danger"></strong></td>
+                                                        <td style="width: 120px"><p class="size">255.03 KB</p></td>
+                                                        <td style="width: 250px; padding-right: 25px"><div  class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:100%;">100%</div></div></td>
+                                                        <td style="width: 200px">
+                                                            <button type="button" class="btn btn-danger btn-bigger-xs"><i class="glyphicon glyphicon-trash"></i> Xóa</button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="x_panel">
+                                    <div class="x_title">
+                                        <h2>Danh sách người nhận <small></small></h2>
+                                        <ul class="nav navbar-right panel_toolbox">
+                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                                <ul class="dropdown-menu" role="menu">
+                                                    <li><a href="#">Settings 1</a>
+                                                    </li>
+                                                    <li><a href="#">Settings 2</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                            </li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                    <div class="x_content">
+                                        <div class="table-responsive">
+                                            <table id="datatable" class="table table-striped jambo_table bulk_action" style="margin: 0 auto;">
+                                                <thead>
+                                                    <tr class="headings">
+                                                        <th class="text-center nosort" style="width: 30px">
+                                                            <input type="checkbox" id="check-all" class="flat">
+                                                        </th>
+                                                        <th class="column-title text-center" style="width: 100px">ZaloPay ID</th>
+                                                        <th class="column-title text-center" style="width: 150px">Tài khoản</th>
+                                                        <th class="column-title text-center" style="width: 100px">Số điện thoại</th>
+                                                        <!--<th class="column-title text-center" >Địa chỉ</th>-->
+                                                        <th class="column-title text-center" style="width: 150px">Số tiền</th>
+                                                        <th class="column-title text-center" style="width: 150px">Thuộc tập tin</th>
+                                                        <th class="column-title text-center" style="width: 100px">Trạng thái</th>
+                                                        <th class="column-title no-link last text-center" style="width: 50px"><span class="nobr">Chức năng</span>
+                                                        </th>
+                                                        <th class="bulk-actions" colspan="9">
+                                                            <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr class="odd pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">1900156901</button></td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Luis.Baron</button></td>
+                                                        <td class="text-center">0996009601</td>
+                                                        <!--<td class="text-center">18B/103 CC Huỳnh Văn Chính P.Phú Trung Q.Tân Phú HCM</td>-->
+                                                        <td class="text-center">7.500.000</td>
+                                                        <td class="text-center">123pay-team.csv</td>
+                                                        <td class="a-right a-right text-center">Chưa chuyển</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-edit"></i> Sửa</button><button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i> Xóa</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="even pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">1900156902</button></td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Luis.Yasuo</button></td>
+                                                        <td class="text-center">0996009602</td>
+                                                        <!--<td class="text-center">18B/103 CC Huỳnh Văn Chính P.Phú Trung Q.Tân Phú HCM</td>-->
+                                                        <td class="text-center">5.100.000</td>
+                                                        <td class="text-center">zalo-team.xsl</td>
+                                                        <td class="a-right a-right text-center">Đang xử lý</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-edit"></i> Sửa</button><button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i> Xóa</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="odd pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">1900156903</button></td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Luis.Nick</button></td>
+                                                        <td class="text-center">0996009603</td>
+                                                        <!--<td class="text-center">18B/103 CC Huỳnh Văn Chính P.Phú Trung Q.Tân Phú HCM</td>-->
+                                                        <td class="text-center">5.000.000</td>
+                                                        <td class="text-center">payment-team.xsl</td>
+                                                        <td class="a-right a-right text-center">Thành công</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-edit"></i> Sửa</button><button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i> Xóa</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="even pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">1900156904</button></td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Luis.Hoopli</button></td>
+                                                        <td class="text-center">0996009604</td>
+                                                        <!--<td class="text-center">18B/103 CC Huỳnh Văn Chính P.Phú Trung Q.Tân Phú HCM</td>-->
+                                                        <td class="text-center">5.000.000</td>
+                                                        <td class="text-center">zalo-team.xsl</td>
+                                                        <td class="a-right a-right text-center">Đang xử lý</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-edit"></i> Sửa</button><button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i> Xóa</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="odd pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">1900156905</button></td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Luis.Health</button></td>
+                                                        <td class="text-center">0996009605</td>
+                                                        <!--<td class="text-center">18B/103 CC Huỳnh Văn Chính P.Phú Trung Q.Tân Phú HCM</td>-->
+                                                        <td class="text-center">5.800.000</td>
+                                                        <td class="text-center">123pay-team.csv</td>
+                                                        <td class="a-right a-right text-center">Chưa chuyển</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-edit"></i> Sửa</button><button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i> Xóa</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="even pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">1900156901</button></td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Luis.Tuan</button></td>
+                                                        <td class="text-center">0996009600</td>
+                                                        <!--<td class="text-center">18B/103 CC Huỳnh Văn Chính P.Phú Trung Q.Tân Phú HCM</td>-->
+                                                        <td class="text-center">2.400.000</td>
+                                                        <td class="text-center">payment-team.xsl</td>
+                                                        <td class="a-right a-right text-center">Chưa chuyển</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-edit"></i> Sửa</button><button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i> Xóa</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="odd pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">1900156906</button></td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Luis.Kled</button></td>
+                                                        <td class="text-center">0996009606</td>
+                                                        <!--<td class="text-center">18B/103 CC Huỳnh Văn Chính P.Phú Trung Q.Tân Phú HCM</td>-->
+                                                        <td class="text-center">25.100.000</td>
+                                                        <td class="text-center">webtech-team.csv</td>
+                                                        <td class="a-right a-right text-center">Chưa chuyển</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-edit"></i> Sửa</button><button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i> Xóa</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="even pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">1900156907</button></td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Luis.Lumina</button></td>
+                                                        <td class="text-center">0996009607</td>
+                                                        <!--<td class="text-center">18B/103 CC Huỳnh Văn Chính P.Phú Trung Q.Tân Phú HCM</td>-->
+                                                        <td class="text-center">6.300.000</td>
+                                                        <td class="text-center">payment-team.xsl</td>
+                                                        <td class="a-right a-right text-center">Thành công</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-edit"></i> Sửa</button><button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i> Xóa</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="odd pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">1900156908</button></td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Luis.XinZhao</button></td>
+                                                        <td class="text-center">0996009608</td>
+                                                        <!--<td class="text-center">18B/103 CC Huỳnh Văn Chính P.Phú Trung Q.Tân Phú HCM</td>-->
+                                                        <td class="text-center">3.600.000</td>
+                                                        <td class="text-center">webtech-team.csv</td>
+                                                        <td class="a-right a-right text-center">Đang xử lý</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-edit"></i> Sửa</button><button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i> Xóa</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="even pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">1900156909</button></td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Luis.Irelia</button></td>
+                                                        <td class="text-center">0996009609</td>
+                                                        <!--<td class="text-center">18B/103 CC Huỳnh Văn Chính P.Phú Trung Q.Tân Phú HCM</td>-->
+                                                        <td class="text-center">500.000</td>
+                                                        <td class="text-center">123pay-team.csv</td>
+                                                        <td class="a-right a-right text-center">Đang xử lý</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-edit"></i> Sửa</button><button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i> Xóa</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="odd pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">1900156910</button></td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Luis.Swain</button></td>
+                                                        <td class="text-center">0996009610</td>
+                                                        <!--<td class="text-center">18B/103 CC Huỳnh Văn Chính P.Phú Trung Q.Tân Phú HCM</td>-->
+                                                        <td class="text-center">35.000.000</td>
+                                                        <td class="text-center">payment-team.xsl</td>
+                                                        <td class="a-right a-right text-center">Thất bại</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-edit"></i> Sửa</button><button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i> Xóa</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="even pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">1900156911</button></td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Luis.Ashe</button></td>
+                                                        <td class="text-center">0996009611</td>
+                                                        <!--<td class="text-center">18B/103 CC Huỳnh Văn Chính P.Phú Trung Q.Tân Phú HCM</td>-->
+                                                        <td class="text-center">4.700.000</td>
+                                                        <td class="text-center">payment-team.xsl</td>
+                                                        <td class="a-right a-right text-center">Thất bại</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-edit"></i> Sửa</button><button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i> Xóa</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="odd pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">1900156912</button></td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Luis.Urdy</button></td>
+                                                        <td class="text-center">0996009612</td>
+                                                        <!--<td class="text-center">18B/103 CC Huỳnh Văn Chính P.Phú Trung Q.Tân Phú HCM</td>-->
+                                                        <td class="text-center">6.700.000</td>
+                                                        <td class="text-center">zalo-team.xsl</td>
+                                                        <td class="a-right a-right text-center">Đang xử lý</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-edit"></i> Sửa</button><button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i> Xóa</button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div style="padding-top: 28px;">
+                                            <button type="button" class="btn btn-success"><i class="fa fa-download" ></i> Xuất ra</button>
+                                            <button type="button" class="btn btn-success"><i class="fa fa-print" ></i> In</button>
+                                            <button type="button" class="btn btn-success"><i class="fa fa-trash-o" ></i> Xóa</button>
+                                            <div class="btn-group" style="vertical-align: top;">
+                                                <button type="button" class="btn btn-success"><i class="fa fa-credit-card" ></i> Chuyển tiền</button>
+                                                <div class="btn-group">
+                                                    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button" aria-expanded="true">Chọn loại <span class="caret"></span> </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="#" rollapp-href="">Tất cả</a>
+                                                        </li>
+                                                        <li><a href="#" rollapp-href="">Chỉ mục</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <!--model-->
+                                            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                                                <div class="modal-dialog modal-lg">
+                                                    <div class="modal-content">
+
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                                            </button>
+                                                            <h4 class="modal-title" id="myModalLabel">Case Management Detail</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form class="form-horizontal form-label-left">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Case ID</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" disabled="disabled" placeholder="Disabled Input" value="2173a724-cc47-44de-8058-eca3b761d9aa">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Case Name</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="BC7456545">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group"> 
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Transaction Type</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <select class="select2_single form-control" tabindex="-1">
+                                                                            <option value="New Business">New Business</option>
+                                                                            <option value="Renewal">Renewal</option>
+                                                                            <option value="Endorsement">Endorsement</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Product</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <select class="select2_single form-control" tabindex="-1">
+                                                                            <option value="travel-express">Travel Express</option>
+                                                                            <option value="fire">Fire</option>
+                                                                            <option value="term-life-secure">Term Life Secure</option>
+                                                                            <option value="term-life-secure">Group Term Life</option>
+                                                                            <option value="motor-private-car-as">Motor Private Car</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Created User<span class="required"></span>
+                                                                    </label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" value="agent111@ipos.com" placeholder="Created User" aria-describedby="inputSuccess2Status4">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Profile ID<span class="required"></span>
+                                                                    </label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" value="ADMIN" placeholder="ProfileId" aria-describedby="inputSuccess2Status4">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Illustration</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Application</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Prospect</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="6173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Underwriting</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="7173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Client Payment</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Agent Payment</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Policy</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <!--                                                                <div class="control-group">
+                                                                                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Resource files</label>
+                                                                                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                                                                                        <input id="tags_1" type="text" class="tags form-control" value="2173a724-cc47-44de-8058-eca3b761d9aa, 2173a724-cc47-44de-8058-eca3b761d9aa, 2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                                                                                        <div id="suggestions-container" style="position: relative; float: left; width: 250px; margin: 10px;"></div>
+                                                                                                                                    </div>
+                                                                                                                                </div>-->
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Created Date<span class="required"></span>
+                                                                    </label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control datePicker" value="09/05/2016" placeholder="Created Date" aria-describedby="inputSuccess2Status4">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Modified Date<span class="required"></span>
+                                                                    </label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control datePicker" value="03/09/2016" placeholder="Modified Date" aria-describedby="inputSuccess2Status4">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Business Status</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <select class="select2_single form-control" tabindex="-1">
+                                                                            <option value="DRAFT">Draft</option>
+                                                                            <option value="READY FOR SUBMISSION">Ready</option>
+                                                                            <option value="SUBMITTING">Submitting</option>
+                                                                            <option value="SUBMITTED">Submitted</option>
+                                                                            <option value="FAIL">Failure</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Document Status</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <select class="select2_single form-control" tabindex="-1">
+                                                                            <option value="VALID">Valid</option>
+                                                                            <option value="INVALID">Invalid</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-default" data-dismiss="">Copy</button>
+                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="x_panel">
+                                    <div class="x_title">
+                                        <h2>Quản lý chuyển tiền <small></small></h2>
+                                        <ul class="nav navbar-right panel_toolbox">
+                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                                <ul class="dropdown-menu" role="menu">
+                                                    <li><a href="#">Settings 1</a>
+                                                    </li>
+                                                    <li><a href="#">Settings 2</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                            </li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                    <div class="x_content">
+                                        <div style="padding-top: 15px;padding-bottom: 15px;">
+                                            <form class="form-horizontal form-label-left input_mask">
+
+                                                <div class="col-md-2 col-sm-2 col-xs-8 form-group has-feedback">
+                                                    <input id="txtCaseIdSearch" type="text" class="form-control has-feedback-left" placeholder="Transaction ID">
+                                                    <span class="fa fa-key form-control-feedback left" aria-hidden="true" style="margin-top: 10px!important;"></span>
+                                                </div>
+
+                                                <div class="col-md-2 col-md col-sm-2 col-xs-4 form-group has-feedback">
+                                                    <input id="txtCaseNameSearch" type="text" class="form-control has-feedback-left" placeholder="ZaloPay ID">
+                                                    <span class="fa fa-credit-card form-control-feedback left" aria-hidden="true" style="margin-top: 10px!important;"></span>
+                                                </div>
+                                                <!--                                                <div class="col-md-2 col-sm-2 col-xs-4 form-group has-feedback">
+                                                                                                    <select id="selProductSearch" class="selProduct form-control" tabindex="-1">
+                                                                                                        <option></option>
+                                                                                                        <option value="travel-express" data-icon="fa-plane">Travel Express</option>
+                                                                                                        <option value="group-term-life" data-icon="fa-users">Group Term Life</option>
+                                                                                                        <option value="regular-unit-link" data-icon="fa-tint">Regular Unit Link</option>
+                                                                                                        <option value="motor-private-car-as" data-icon="fa-bicycle">Motor Private Car</option>
+                                                                                                        <option value="term-life-secure" data-icon="fa-heart">Term Life Secure</option>                                                       
+                                                                                                        <option value="personal-accident" data-icon="fa-exclamation-triangle">Personal Accident</option>
+                                                                                                        <option value="guarantee-caskback-saver" data-icon="fa-line-chart">Guarantee Cashback Saver</option>
+                                                                                                        <option value="fire" data-icon="fa-fire">Fire</option>
+                                                                                                        <option value="car" data-icon="fa-automobile">Car</option>
+                                                                                                    </select>
+                                                                                                </div>-->
+                                                <div class="col-md-2 col-sm-2 col-xs-4 form-group has-feedback">
+                                                    <input type="text" class="form-control has-feedback-left" id="txtCreatedByUserSearch" placeholder="Họ tên">
+                                                    <span class="fa fa-user form-control-feedback left" aria-hidden="true" style="margin-top: 10px!important;"></span>
+                                                </div>
+                                                <div class="col-md-2 col-sm-2 col-xs-4 form-group has-feedback">
+                                                    <input type="text" class="form-control has-feedback-left" id="txtCreatedByUserSearch" placeholder="Thời gian">
+                                                    <span class="fa fa-clock-o form-control-feedback left" aria-hidden="true" style="margin-top: 10px!important;"></span>
+                                                </div>
+                                                <div class="col-md-2 col-sm-2 col-xs-4 form-group has-feedback">
+                                                    <input type="text" class="form-control has-feedback-left" id="txtCreatedByUserSearch" placeholder="Số lượng">
+                                                    <span class="fa fa-bar-chart-o form-control-feedback left" aria-hidden="true" style="margin-top: 10px!important;"></span>
+                                                </div>
+
+                                                <!--                                            <div class="ln_solid"></div>-->
+                                                <div class="col-md-2 col-sm-2 col-xs-4 form-group has-feedback">
+                                                    <button id="btnSearch" type="submit" class="btn btn-success"><i class="fa fa-search"></i> Tìm kiếm</button>
+                                                </div>
+
+                                            </form>
+                                        </div>
+
+                                        <div class="table-responsive">
+                                            <table id="datatable" class="table table-striped jambo_table bulk_action" style="margin: 0 auto;">
+                                                <thead>
+                                                    <tr class="headings">
+                                                        <th class="text-center nosort" style="width: 30px">
+                                                            <input type="checkbox" id="check-all" class="flat">
+                                                        </th>
+                                                        <th class="column-title text-center" style="width: 100px">Transaction ID</th>
+                                                        <th class="column-title text-center" style="width: 150px">ZaloPay ID</th>
+                                                        <th class="column-title text-center" style="width: 100px">Họ & tên</th>
+                                                        <th class="column-title text-center" style="width: 100px">Tài khoản</th>
+                                                        <th class="column-title text-center" style="width: 100px">Hộp thư</th>
+                                                        <th class="column-title text-center" style="width: 150px">Thời gian</th>
+                                                        <th class="column-title text-center" style="width: 80px">Thành công</th>
+                                                        <th class="column-title text-center" style="width: 80px">Tổng cộng</th>
+                                                        <th class="column-title text-center" style="width: 100px">Trạng thái</th>
+                                                        <th class="column-title no-link last text-center" style="width: 100px"><span class="nobr">Chức năng</span>
+                                                        </th>
+                                                        <th class="bulk-actions" colspan="9">
+                                                            <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr class="odd pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">2253564562</button></td>
+                                                        <td class="text-center">1900156901</td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Bùi Tuấn Kiệt</button></td>
+                                                        <td class="text-left">kietbt2</td>
+                                                        <td class="text-left">kietbt2@vng.com.vn</td>
+                                                        <td class="text-center">04/10/2016</td>
+                                                        <td class="text-center">329</td>
+                                                        <td class="a-right a-right text-center">420</td>
+                                                        <td class="a-right a-right text-center">Active</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-binoculars"></i> Chi tiết</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="even pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">2253564562</button></td>
+                                                        <td class="text-center">1900156901</td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Bùi Quốc Khánh</button></td>
+                                                        <td class="text-left">khanhbq</td>
+                                                        <td class="text-left">khanhbq@vng.com.vn</td>
+                                                        <td class="text-center">05/10/2016</td>
+                                                        <td class="text-center">215</td>
+                                                        <td class="a-right a-right text-center">255</td>
+                                                        <td class="a-right a-right text-center">Active</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-binoculars"></i> Chi tiết</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="odd pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">2253564562</button></td>
+                                                        <td class="text-center">1900156901</td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Nguyễn Hoàng Sơn</button></td>
+                                                        <td class="text-left">sonnh</td>
+                                                        <td class="text-left">sonnh@vng.com.vn</td>
+                                                        <td class="text-center">05/10/2016</td>
+                                                        <td class="text-center">68</td>
+                                                        <td class="a-right a-right text-center">158</td>
+                                                        <td class="a-right a-right text-center">Deleted</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-binoculars"></i> Chi tiết</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="even pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">2253564562</button></td>
+                                                        <td class="text-center">1900156901</td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Thanh Hoàng Minh</button></td>
+                                                        <td class="text-left">minhth</td>
+                                                        <td class="text-left">minhth@vng.com.vn</td>
+                                                        <td class="text-center">07/10/2016</td>
+                                                        <td class="text-center">121</td>
+                                                        <td class="a-right a-right text-center">749</td>
+                                                        <td class="a-right a-right text-center">Active</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-binoculars"></i> Chi tiết</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="odd pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">2253564562</button></td>
+                                                        <td class="text-center">1900156901</td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Bùi Kim Nhã</button></td>
+                                                        <td class="text-left">nhabk</td>
+                                                        <td class="text-left">nhabk@vng.com.vn</td>
+                                                        <td class="text-center">09/10/2016</td>
+                                                        <td class="text-center">225</td>
+                                                        <td class="a-right a-right text-center">369</td>
+                                                        <td class="a-right a-right text-center">Active</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-binoculars"></i> Chi tiết</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="even pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">2253564562</button></td>
+                                                        <td class="text-center">1900156901</td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Vương Mạnh Đình</button></td>
+                                                        <td class="text-left">dinhvm</td>
+                                                        <td class="text-left">dinhvm@vng.com.vn</td>
+                                                        <td class="text-center">02/10/2016</td>
+                                                        <td class="text-center">48</td>
+                                                        <td class="a-right a-right text-center">120</td>
+                                                        <td class="a-right a-right text-center">Deleted</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-binoculars"></i> Chi tiết</button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div style="padding-top: 15px;padding-bottom: 10px;">
+                                                <div class="">
+                                                    <div class="dataTables_info" id="datatable_info" role="status" aria-live="polite">Hiển thị  1 đến 5 trong 13 người nhận</div>
+                                                </div>
+                                                <div class="" style="text-align: right">
+                                                    <div class="" id="datatable_paginate">
+                                                        <ul class="pagination" style="margin: 1px 0!important;">
+                                                            <li class="paginate_button previous disabled" id="datatable_previous">
+                                                                <a href="#" aria-controls="datatable" data-dt-idx="0" tabindex="0">Previous</a>
+                                                            </li>
+                                                            <li class="paginate_button active"><a href="#" aria-controls="datatable" data-dt-idx="1" tabindex="0">1</a></li>
+                                                            <li class="paginate_button "><a href="#" aria-controls="datatable" data-dt-idx="2" tabindex="0">2</a></li>
+                                                            <li class="paginate_button1"><a href="#" aria-controls="datatable" data-dt-idx="3" tabindex="0">3</a></li>
+                                                            <li class="paginate_button next" id="datatable_next"><a href="#" aria-controls="datatable" data-dt-idx="4" tabindex="0">Next</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="padding-top: 12px;">
+                                            <button type="button" class="btn btn-success"><i class="fa fa-download" ></i> Xuất ra</button>
+                                            <button type="button" class="btn btn-success"><i class="fa fa-print" ></i> In</button>
+                                            <div class="btn-group" style="vertical-align: top;">
+                                                <button type="button" class="btn btn-success"><i class="fa fa-edit" ></i> Đổi trạng thái</button>
+                                                <div class="btn-group">
+                                                    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button" aria-expanded="true">Chọn loại <span class="caret"></span> </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="#" rollapp-href="">Active</a>
+                                                        </li>
+                                                        <li><a href="#" rollapp-href="">Deleted</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <!--model-->
+                                            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                                                <div class="modal-dialog modal-lg">
+                                                    <div class="modal-content">
+
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                                            </button>
+                                                            <h4 class="modal-title" id="myModalLabel">Case Management Detail</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form class="form-horizontal form-label-left">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Case ID</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" disabled="disabled" placeholder="Disabled Input" value="2173a724-cc47-44de-8058-eca3b761d9aa">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Case Name</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="BC7456545">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group"> 
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Transaction Type</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <select class="select2_single form-control" tabindex="-1">
+                                                                            <option value="New Business">New Business</option>
+                                                                            <option value="Renewal">Renewal</option>
+                                                                            <option value="Endorsement">Endorsement</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Product</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <select class="select2_single form-control" tabindex="-1">
+                                                                            <option value="travel-express">Travel Express</option>
+                                                                            <option value="fire">Fire</option>
+                                                                            <option value="term-life-secure">Term Life Secure</option>
+                                                                            <option value="term-life-secure">Group Term Life</option>
+                                                                            <option value="motor-private-car-as">Motor Private Car</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Created User<span class="required"></span>
+                                                                    </label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" value="agent111@ipos.com" placeholder="Created User" aria-describedby="inputSuccess2Status4">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Profile ID<span class="required"></span>
+                                                                    </label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" value="ADMIN" placeholder="ProfileId" aria-describedby="inputSuccess2Status4">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Illustration</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Application</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Prospect</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="6173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Underwriting</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="7173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Client Payment</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Agent Payment</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Policy</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <!--                                                                <div class="control-group">
+                                                                                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Resource files</label>
+                                                                                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                                                                                        <input id="tags_1" type="text" class="tags form-control" value="2173a724-cc47-44de-8058-eca3b761d9aa, 2173a724-cc47-44de-8058-eca3b761d9aa, 2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                                                                                        <div id="suggestions-container" style="position: relative; float: left; width: 250px; margin: 10px;"></div>
+                                                                                                                                    </div>
+                                                                                                                                </div>-->
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Created Date<span class="required"></span>
+                                                                    </label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control datePicker" value="09/05/2016" placeholder="Created Date" aria-describedby="inputSuccess2Status4">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Modified Date<span class="required"></span>
+                                                                    </label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control datePicker" value="03/09/2016" placeholder="Modified Date" aria-describedby="inputSuccess2Status4">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Business Status</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <select class="select2_single form-control" tabindex="-1">
+                                                                            <option value="DRAFT">Draft</option>
+                                                                            <option value="READY FOR SUBMISSION">Ready</option>
+                                                                            <option value="SUBMITTING">Submitting</option>
+                                                                            <option value="SUBMITTED">Submitted</option>
+                                                                            <option value="FAIL">Failure</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Document Status</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <select class="select2_single form-control" tabindex="-1">
+                                                                            <option value="VALID">Valid</option>
+                                                                            <option value="INVALID">Invalid</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-default" data-dismiss="">Copy</button>
+                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="x_panel">
+                                    <div class="x_title">
+                                        <h2>Chi tiết giao dịch <small></small></h2>
+                                        <ul class="nav navbar-right panel_toolbox">
+                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                                <ul class="dropdown-menu" role="menu">
+                                                    <li><a href="#">Settings 1</a>
+                                                    </li>
+                                                    <li><a href="#">Settings 2</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                            </li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                    <div class="x_content">
+                                        <div style="padding-top: 15px;padding-bottom: 15px;">
+                                            <form class="form-horizontal form-label-left input_mask">
+
+                                                <div class="">
+                                                    <label class="control-label col-md-1 col-sm-1 col-xs-12">Transaction ID</label>
+                                                    <div class="col-md-3 col-sm-3 col-xs-12" style="height: 36px;">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" value="154846145">
+                                                            <span class="input-group-btn">
+                                                                <button style="width:87px;margin-right: 0px;" type="button" class="btn btn-success">Tìm kiếm</button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="">
+                                                    <label class="control-label col-md-1 col-sm-1 col-xs-12">Tài khoản</label>
+                                                    <div class="col-md-3 col-sm-3 col-xs-12 form-group">
+                                                        <input type="text" class="form-control" placeholder="" value="kietbt2" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="">
+                                                    <label class="control-label col-md-1 col-sm-1 col-xs-12">Họ & tên</label>
+                                                    <div class="col-md-3 col-sm-3 col-xs-12 form-group">
+                                                        <input type="text" class="form-control" placeholder="" value="Bùi Tuấn Kiệt" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="">
+                                                    <label class="control-label col-md-1 col-sm-1 col-xs-12">ZaloPay ID</label>
+                                                    <div class="col-md-3 col-sm-3 col-xs-12 form-group">
+                                                        <input type="text" class="form-control" placeholder="" value="19520165" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="">
+                                                    <label class="control-label col-md-1 col-sm-1 col-xs-12">Thành công</label>
+                                                    <div class="col-md-3 col-sm-3 col-xs-12 form-group">
+                                                        <input type="text" class="form-control" placeholder="" value="239" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="">
+                                                    <label class="control-label col-md-1 col-sm-1 col-xs-12">Hộp thư</label>
+                                                    <div class="col-md-3 col-sm-3 col-xs-12 form-group">
+                                                        <input type="text" class="form-control" placeholder="" value="luis.goldster@gmail.com" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="">
+                                                    <label class="control-label col-md-1 col-sm-1 col-xs-12">Chuyển lúc</label>
+                                                    <div class="col-md-3 col-sm-3 col-xs-12 form-group">
+                                                        <input type="text" class="form-control" placeholder="" value="06/10/2016" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="">
+                                                    <label class="control-label col-md-1 col-sm-1 col-xs-12">Tổng cộng</label>
+                                                    <div class="col-md-3 col-sm-3 col-xs-12 form-group">
+                                                        <input type="text" class="form-control" placeholder="" value="450" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="">
+                                                    <label class="control-label col-md-1 col-sm-1 col-xs-12">Trạng thái</label>
+                                                    <div class="col-md-3 col-sm-3 col-xs-12 form-group">
+                                                        <input type="text" class="form-control" placeholder="" value="Active" disabled>
+                                                    </div>
+                                                </div>
+<!--                                                <div class="" style="text-align: right;">
+                                                    <div class="col-md-4 col-sm-4 col-xs-8 form-group has-feedback">
+                                                        <button id="btnSearch" type="submit" class="btn btn-success"><i class="fa fa-search"></i> Tìm kiếm</button>
+                                                    </div>
+                                                </div>-->
+
+
+                                                <!--                                                <div class="col-md-2 col-md col-sm-2 col-xs-4 form-group has-feedback">
+                                                                                                    <input id="txtCaseNameSearch" type="text" class="form-control has-feedback-left" placeholder="ZaloPay ID">
+                                                                                                    <span class="fa fa-credit-card form-control-feedback left" aria-hidden="true" style="margin-top: 10px!important;"></span>
+                                                                                                </div>
+                                                                                                                                                <div class="col-md-2 col-sm-2 col-xs-4 form-group has-feedback">
+                                                                                                                                                    <select id="selProductSearch" class="selProduct form-control" tabindex="-1">
+                                                                                                                                                        <option></option>
+                                                                                                                                                        <option value="travel-express" data-icon="fa-plane">Travel Express</option>
+                                                                                                                                                        <option value="group-term-life" data-icon="fa-users">Group Term Life</option>
+                                                                                                                                                        <option value="regular-unit-link" data-icon="fa-tint">Regular Unit Link</option>
+                                                                                                                                                        <option value="motor-private-car-as" data-icon="fa-bicycle">Motor Private Car</option>
+                                                                                                                                                        <option value="term-life-secure" data-icon="fa-heart">Term Life Secure</option>                                                       
+                                                                                                                                                        <option value="personal-accident" data-icon="fa-exclamation-triangle">Personal Accident</option>
+                                                                                                                                                        <option value="guarantee-caskback-saver" data-icon="fa-line-chart">Guarantee Cashback Saver</option>
+                                                                                                                                                        <option value="fire" data-icon="fa-fire">Fire</option>
+                                                                                                                                                        <option value="car" data-icon="fa-automobile">Car</option>
+                                                                                                                                                    </select>
+                                                                                                                                                </div>
+                                                                                                <div class="col-md-2 col-sm-2 col-xs-4 form-group has-feedback">
+                                                                                                    <input type="text" class="form-control has-feedback-left" id="txtCreatedByUserSearch" placeholder="Họ tên">
+                                                                                                    <span class="fa fa-user form-control-feedback left" aria-hidden="true" style="margin-top: 10px!important;"></span>
+                                                                                                </div>
+                                                                                                <div class="col-md-2 col-sm-2 col-xs-4 form-group has-feedback">
+                                                                                                    <input type="text" class="form-control has-feedback-left" id="txtCreatedByUserSearch" placeholder="Thời gian">
+                                                                                                    <span class="fa fa-clock-o form-control-feedback left" aria-hidden="true" style="margin-top: 10px!important;"></span>
+                                                                                                </div>
+                                                                                                <div class="col-md-2 col-sm-2 col-xs-4 form-group has-feedback">
+                                                                                                    <input type="text" class="form-control has-feedback-left" id="txtCreatedByUserSearch" placeholder="Số lượng">
+                                                                                                    <span class="fa fa-bar-chart-o form-control-feedback left" aria-hidden="true" style="margin-top: 10px!important;"></span>
+                                                                                                </div>
+                                                
+                                                                                                                                            <div class="ln_solid"></div>
+                                                                                                <div class="col-md-2 col-sm-2 col-xs-4 form-group has-feedback">
+                                                                                                    <button id="btnSearch" type="submit" class="btn btn-success"><i class="fa fa-search"></i> Tìm kiếm</button>
+                                                                                                </div>-->
+
+                                            </form>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table id="datatable" class="table table-striped jambo_table bulk_action" style="margin: 0 auto;">
+                                                <thead>
+                                                    <tr class="headings">
+                                                        <th class="text-center nosort" style="width: 100px">
+                                                            <input type="checkbox" id="check-all" class="flat">
+                                                        </th>
+                                                        <th class="column-title text-center" style="width: 200px">ZaloPay ID</th>
+                                                        <th class="column-title text-center" style="width: 250px">Tài khoản</th>
+                                                        <th class="column-title text-center" style="width: 200px">Số điện thoại</th>
+                                                        <th class="column-title text-center" style="width: 350px" >Địa chỉ</th>
+                                                        <th class="column-title text-center" style="width: 250px">Số tiền</th>
+                                                        <th class="column-title text-center" style="width: 250px">Xử lí</th>
+                                                        <th class="column-title text-center" style="width: 200px">Trạng thái</th>
+                                                        <th class="column-title no-link last text-center"  style="width: 100px"><span class="nobr">Chức năng</span>
+                                                        </th>
+                                                        <th class="bulk-actions" colspan="9">
+                                                            <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr class="odd pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">1900156901</button></td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Luis.Baron</button></td>
+                                                        <td class="text-center">0996009601</td>
+                                                        <td class="text-center">18B/103 CC Huỳnh Văn Chính</td>
+                                                        <td class="text-center">7.500.000</td>
+                                                        <td class="a-right a-right text-center">Chưa chuyển</td>
+                                                        <td class="a-right a-right text-center">Active</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-edit"></i> Sửa</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="even pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">1900156902</button></td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Luis.Yasuo</button></td>
+                                                        <td class="text-center">0996009602</td>
+                                                        <td class="text-center">18B/103 CC Huỳnh Văn Chính</td>
+                                                        <td class="text-center">5.100.000</td>
+                                                        <td class="a-right a-right text-center">Đang xử lý</td>
+                                                        <td class="a-right a-right text-center">Deleted</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-edit"></i> Sửa</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="odd pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">1900156903</button></td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Luis.Nick</button></td>
+                                                        <td class="text-center">0996009603</td>
+                                                        <td class="text-center">18B/103 CC Huỳnh Văn Chính</td>
+                                                        <td class="text-center">5.000.000</td>
+                                                        <td class="a-right a-right text-center">Thành công</td>
+                                                        <td class="a-right a-right text-center">Active</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-edit"></i> Sửa</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="even pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">1900156904</button></td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Luis.Hoopli</button></td>
+                                                        <td class="text-center">0996009604</td>
+                                                        <td class="text-center">18B/103 CC Huỳnh Văn Chính</td>
+                                                        <td class="text-center">5.000.000</td>
+                                                        <td class="a-right a-right text-center">Đang xử lý</td>
+                                                        <td class="a-right a-right text-center">Active</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-edit"></i> Sửa</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="odd pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">1900156905</button></td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Luis.Health</button></td>
+                                                        <td class="text-center">0996009605</td>
+                                                        <td class="text-center">18B/103 CC Huỳnh Văn Chính</td>
+                                                        <td class="text-center">5.800.000</td>
+                                                        <td class="a-right a-right text-center">Chưa chuyển</td>
+                                                        <td class="a-right a-right text-center">Active</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-edit"></i> Sửa</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="even pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">1900156901</button></td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Luis.Tuan</button></td>
+                                                        <td class="text-center">0996009600</td>
+                                                        <td class="text-center">18B/103 CC Huỳnh Văn Chính</td>
+                                                        <td class="text-center">2.400.000</td>
+                                                        <td class="a-right a-right text-center">Chưa chuyển</td>
+                                                        <td class="a-right a-right text-center">Active</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-edit"></i> Sửa</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="odd pointer">
+                                                        <td class="text-center">
+                                                            <input type="checkbox" class="flat" name="table_records">
+                                                        </td>
+                                                        <td class="text-center"><button type="button" class="btn btn-link">1900156906</button></td>
+                                                        <td class="text-left"><button type="button" class="btn btn-link">Luis.Kled</button></td>
+                                                        <td class="text-center">0996009606</td>
+                                                        <td class="text-center">18B/103 CC Huỳnh Văn Chính</td>
+                                                        <td class="text-center">25.100.000</td>
+                                                        <td class="a-right a-right text-center">Chưa chuyển</td>
+                                                        <td class="a-right a-right text-center">Active</td>
+                                                        <td class="last text-center"><button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-edit"></i> Sửa</button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div style="padding-top: 15px;padding-bottom: 10px;">
+                                                <div class="">
+                                                    <div class="dataTables_info" id="datatable_info" role="status" aria-live="polite">Hiển thị  1 đến 5 trong 13 người nhận</div>
+                                                </div>
+                                                <div class="" style="text-align: right">
+                                                    <div class="" id="datatable_paginate">
+                                                        <ul class="pagination" style="margin: 1px 0!important;">
+                                                            <li class="paginate_button previous disabled" id="datatable_previous">
+                                                                <a href="#" aria-controls="datatable" data-dt-idx="0" tabindex="0">Previous</a>
+                                                            </li>
+                                                            <li class="paginate_button active"><a href="#" aria-controls="datatable" data-dt-idx="1" tabindex="0">1</a></li>
+                                                            <li class="paginate_button "><a href="#" aria-controls="datatable" data-dt-idx="2" tabindex="0">2</a></li>
+                                                            <li class="paginate_button1"><a href="#" aria-controls="datatable" data-dt-idx="3" tabindex="0">3</a></li>
+                                                            <li class="paginate_button next" id="datatable_next"><a href="#" aria-controls="datatable" data-dt-idx="4" tabindex="0">Next</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="padding-top: 12px;">
+                                            <button type="button" class="btn btn-success"><i class="fa fa-download" ></i> Xuất ra</button>
+                                            <button type="button" class="btn btn-success"><i class="fa fa-print" ></i> In</button>
+                                            <div class="btn-group" style="vertical-align: top;">
+                                                <button type="button" class="btn btn-success"><i class="fa fa-edit" ></i> Đổi trạng thái</button>
+                                                <div class="btn-group">
+                                                    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button" aria-expanded="true">Chọn loại <span class="caret"></span> </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="#" rollapp-href="">Tất cả</a>
+                                                        </li>
+                                                        <li><a href="#" rollapp-href="">Chỉ mục</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <!--model-->
+                                            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                                                <div class="modal-dialog modal-lg">
+                                                    <div class="modal-content">
+
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                                            </button>
+                                                            <h4 class="modal-title" id="myModalLabel">Case Management Detail</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form class="form-horizontal form-label-left">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Case ID</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" disabled="disabled" placeholder="Disabled Input" value="2173a724-cc47-44de-8058-eca3b761d9aa">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Case Name</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="BC7456545">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group"> 
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Transaction Type</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <select class="select2_single form-control" tabindex="-1">
+                                                                            <option value="New Business">New Business</option>
+                                                                            <option value="Renewal">Renewal</option>
+                                                                            <option value="Endorsement">Endorsement</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Product</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <select class="select2_single form-control" tabindex="-1">
+                                                                            <option value="travel-express">Travel Express</option>
+                                                                            <option value="fire">Fire</option>
+                                                                            <option value="term-life-secure">Term Life Secure</option>
+                                                                            <option value="term-life-secure">Group Term Life</option>
+                                                                            <option value="motor-private-car-as">Motor Private Car</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Created User<span class="required"></span>
+                                                                    </label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" value="agent111@ipos.com" placeholder="Created User" aria-describedby="inputSuccess2Status4">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Profile ID<span class="required"></span>
+                                                                    </label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" value="ADMIN" placeholder="ProfileId" aria-describedby="inputSuccess2Status4">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Illustration</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Application</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Prospect</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="6173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Underwriting</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="7173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Client Payment</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Agent Payment</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Policy</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control" placeholder="Default Input" value="2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                    </div>
+                                                                </div>
+                                                                <!--                                                                <div class="control-group">
+                                                                                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Resource files</label>
+                                                                                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                                                                                        <input id="tags_1" type="text" class="tags form-control" value="2173a724-cc47-44de-8058-eca3b761d9aa, 2173a724-cc47-44de-8058-eca3b761d9aa, 2173a724-cc47-44de-8058-eca3b761d9aa"/>
+                                                                                                                                        <div id="suggestions-container" style="position: relative; float: left; width: 250px; margin: 10px;"></div>
+                                                                                                                                    </div>
+                                                                                                                                </div>-->
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Created Date<span class="required"></span>
+                                                                    </label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control datePicker" value="09/05/2016" placeholder="Created Date" aria-describedby="inputSuccess2Status4">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Modified Date<span class="required"></span>
+                                                                    </label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <input type="text" class="form-control datePicker" value="03/09/2016" placeholder="Modified Date" aria-describedby="inputSuccess2Status4">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Business Status</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <select class="select2_single form-control" tabindex="-1">
+                                                                            <option value="DRAFT">Draft</option>
+                                                                            <option value="READY FOR SUBMISSION">Ready</option>
+                                                                            <option value="SUBMITTING">Submitting</option>
+                                                                            <option value="SUBMITTED">Submitted</option>
+                                                                            <option value="FAIL">Failure</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Document Status</label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        <select class="select2_single form-control" tabindex="-1">
+                                                                            <option value="VALID">Valid</option>
+                                                                            <option value="INVALID">Invalid</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-default" data-dismiss="">Copy</button>
+                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /page content -->
+
+                <!-- footer content -->
+                <footer>
+                    <div class="pull-right">
+                        Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+                    </div>
+                    <div class="clearfix"></div>
+                </footer>
+                <!-- /footer content -->
+            </div>
+        </div>
+
+        <!-- jQuery -->
+        <script src="../vendors/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- FastClick -->
+        <script src="../vendors/fastclick/lib/fastclick.js"></script>
+        <!-- NProgress -->
+        <script src="../vendors/nprogress/nprogress.js"></script>
+        <!-- bootstrap-progressbar -->
+        <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+        <!-- iCheck -->
+        <script src="../vendors/iCheck/icheck.min.js"></script>
+        <!-- select2 -->
+        <script src="../vendors/select2/dist/js/select2.full.min.js"></script>
+        <!-- bootstrap-wysiwyg -->
+        <script src="../vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+        <script src="../vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+        <script src="../vendors/google-code-prettify/src/prettify.js"></script>
+        <!-- bootstrap-daterangepicker -->
+        <script src="js/moment/moment.min.js"></script>
+        <script src="js/datepicker/daterangepicker.js"></script>
+        <!-- Ion.RangeSlider -->
+        <script src="../vendors/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
+        <!-- Bootstrap Colorpicker -->
+        <script src="../vendors/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+        <!-- Custom Theme Scripts -->
+        <script src="../build/js/custom.min.js"></script>
+        <!-- jQuery Tags Input -->
+        <script src="../vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+        <!-- Switchery -->
+        <script src="../vendors/switchery/dist/switchery.min.js"></script>
+        <script src="js/case-management.js" type="text/javascript"></script>
+        <!-- Datatables -->
+        <script src="../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+        <script src="../vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+        <script src="../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+        <script src="../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+        <script src="../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+        <script src="../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+        <script src="../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+        <script src="../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+        <script src="../vendors/datatables.net-scroller/js/datatables.scroller.min.js"></script>
+        <!-- Dropzone.js -->
+        <!--<script src="../vendors/dropzone/dist/dropzone.js"></script>-->
+
+        <script>
+            $(document).ready(function () {
+                var handleDataTableButtons = function () {
+                    if ($("#datatable-buttons").length) {
+                        $("#datatable-buttons").DataTable({
+                            dom: "Bfrtip",
+                            buttons: [
+                                {
+                                    extend: "copy",
+                                    className: "btn-sm"
+                                },
+                                {
+                                    extend: "csv",
+                                    className: "btn-sm"
+                                },
+                                {
+                                    extend: "excel",
+                                    className: "btn-sm"
+                                },
+                                {
+                                    extend: "pdfHtml5",
+                                    className: "btn-sm"
+                                },
+                                {
+                                    extend: "print",
+                                    className: "btn-sm"
+                                },
+                            ],
+                            responsive: true
+                        });
+                    }
+                };
+
+                TableManageButtons = function () {
+                    "use strict";
+                    return {
+                        init: function () {
+                            handleDataTableButtons();
+                        }
+                    };
+                }();
+
+//                $('#datatable').dataTable({
+//                    "language": {
+//                        "info": "Hiển thị _START_ đến _END_ trong _TOTAL_ người nhận"
+//                    },
+//                    "columnDefs": [{
+//                            "targets": 0,
+//                            "orderable": false
+//                        }]
+//                });
+
+
+                $('#datatable').dataTable({
+                    "pageLength": 5,
+                    "language": {
+                        "search": "Tìm kiếm ",
+                        "info": "Hiển thị  _START_ đến _END_ trong _TOTAL_ người nhận",
+                        "lengthMenu": 'Hiển thị <select class="form-control input-sm">' +
+                                '<option value="5">5</option>' +
+                                '<option value="10">10</option>' +
+                                '<option value="20">20</option>' +
+                                '<option value="50">50</option>' +
+                                '<option value="-1">All</option>' +
+                                '</select>  dòng'
+                    },
+                    "columnDefs": [{
+                            "targets": 'nosort',
+                            "orderable": false
+                        }]
+                });
+
+                $('#datatable-keytable').DataTable({
+                    keys: true
+                });
+
+                $('#datatable-responsive').DataTable();
+
+                $('#datatable-scroller').DataTable({
+                    ajax: "js/datatables/json/scroller-demo.json",
+                    deferRender: true,
+                    scrollY: 380,
+                    scrollCollapse: true,
+                    scroller: true
+                });
+
+                var table = $('#datatable-fixed-header').DataTable({
+                    fixedHeader: true
+                });
+
+                TableManageButtons.init();
+            });
+        </script>
+
+    </body>
+</html>
